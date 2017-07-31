@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+  platform :ios, '10.3'
+
+target 'Safety Assistant' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'KRProgressHUD'
+
+  # Pods for Safety Assistant
+
+  target 'Safety AssistantTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Safety AssistantUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
