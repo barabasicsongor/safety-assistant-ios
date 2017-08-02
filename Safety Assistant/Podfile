@@ -9,6 +9,7 @@ target 'Safety Assistant' do
   pod 'Alamofire'
   pod 'KRProgressHUD'
   pod 'SimpleAnimation'
+  pod 'SearchTextField'
 
   # Pods for Safety Assistant
 

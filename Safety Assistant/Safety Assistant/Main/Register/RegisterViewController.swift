@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RegisterViewController: UIViewController {
 	
@@ -15,7 +16,7 @@ class RegisterViewController: UIViewController {
 	
 	let picker = UIImagePickerController()
 	var selectedImg = false
-
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,6 +66,7 @@ class RegisterViewController: UIViewController {
 			alert(title: "No name", message: "Please set a name for a friendlier environment")
 		} else {
 			save(name: textField.text!, image: imageView.image!)
+			UserDefaults.standard.set(true, forKey: "registered")
 			
 			let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapNavigationController") as! UINavigationController
 			present(navController, animated: true, completion: nil)
@@ -116,7 +118,7 @@ class RegisterViewController: UIViewController {
 	func save(name: String, image: UIImage) {
 		UserDefaults.standard.set(name, forKey: "name")
 		
-		if let data = UIImagePNGRepresentation(image) {
+		if let data = UIImageJPEGRepresentation(image, 0.8) {
 			let filename = getDocumentsDirectory().appendingPathComponent("profile_pic.png")
 			try? data.write(to: filename)
 		}

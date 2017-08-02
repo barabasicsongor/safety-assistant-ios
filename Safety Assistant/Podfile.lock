@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (4.3.0)
   - KRProgressHUD (2.1.0)
+  - SearchTextField (1.0.7)
   - SimpleAnimation (0.3.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
   - KRProgressHUD
+  - SearchTextField
   - SimpleAnimation
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   KRProgressHUD: c3a59d192ffe1d470efe2525217f0d3aab06418d
+  SearchTextField: 0ac05920547702261faa2a427bc4add64cefab57
   SimpleAnimation: 0c4fe9cb60b5d5c57611909ca95722446fe74d63
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6548d55cceee42d54b470cb14472a7e055f99224
+PODFILE CHECKSUM: 5e2329f38c418c6891c86cdaf0a05d61923c5ddd
 
 COCOAPODS: 1.2.1

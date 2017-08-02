@@ -11,7 +11,7 @@ import JSQMessagesViewController
 import AWSLex
 import AWSMobileHubHelper
 
-let ClientSenderId = "Client"
+let ClientSenderId = UserDefaults.standard.string(forKey: "name")
 let ServerSenderId = "Server"
 
 /// Manages a text-to-text conversation with a bot
@@ -52,22 +52,24 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		
 		// Initialize avatars for client and server
 		
-		clientImage = JSQMessagesAvatarImageFactory().avatarImage(with: UIImage(named: "robot")!)
-		serverImage = JSQMessagesAvatarImageFactory().avatarImage(with: UIImage(named: "robot")!)
+		clientImage = JSQMessagesAvatarImageFactory().avatarImage(with: getUserImage())
+		serverImage = JSQMessagesAvatarImageFactory().avatarImage(with: UIImage(named: "robot_avatar")!)
 		
 		// set the keyboard type
 		self.inputToolbar.contentView?.textView?.keyboardType = UIKeyboardType.default
 		
 		// initialize the messages list
 		self.messages = [JSQMessage]()
+		self.messages?.append(JSQMessage(senderId: ServerSenderId, senderDisplayName: senderDisplayName(), date: Date(), text: "Hello " + senderDisplayName() + "! How can I help you?"))
 		
 		// set the colors for message bubbles
 		let bubbleFactory = JSQMessagesBubbleImageFactory()
 		self.outgoingBubbleImageData = bubbleFactory.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
-//		self.incomingBubbleImageData = bubbleFactory.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
 		self.incomingBubbleImageData = bubbleFactory.incomingMessagesBubbleImage(with: UIColor(hex: "#004474"))
 		
 		self.inputToolbar.contentView?.leftBarButtonItem = nil
+		
+		self.navigationController?.navigationBar.isTranslucent = false
 	}
 	
 	func backButtonPress() {
@@ -87,6 +89,17 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		self.navigationItem.setLeftBarButton(item, animated: true)
 	}
 	
+	func getUserImage() -> UIImage {
+		let filename = getDocumentsDirectory().appendingPathComponent("profile_pic.png")
+		return UIImage(contentsOfFile: filename.path)!
+	}
+	
+	func getDocumentsDirectory() -> URL {
+		let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+		let documentsDirectory = paths[0]
+		return documentsDirectory
+	}
+	
 	// MARK: - JSQMessagesViewController delegate methods
 	
 	override func didPressSend(_ button: UIButton, withMessageText text: String, senderId: String, senderDisplayName: String, date: Date) {
@@ -101,14 +114,15 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 			self.interactionKit?.text(inTextOut: text)
 		}
 		self.finishSendingMessage(animated: true)
+		self.showTypingIndicator = true
 	}
 	
 	override func senderDisplayName() -> String {
-		return "Joe"
+		return UserDefaults.standard.string(forKey: "name")!
 	}
 	
 	override func senderId() -> String {
-		return ClientSenderId
+		return ClientSenderId!
 	}
 	
 	override func collectionView(_ collectionView: JSQMessagesCollectionView, messageDataForItemAt indexPath: IndexPath) -> JSQMessageData {
@@ -218,6 +232,8 @@ extension ChatViewController: AWSLexInteractionDelegate {
 				self.messages?.append(message)
 				self.finishSendingMessage(animated: true)
 			}
+			
+			self.showTypingIndicator = false
 			
 		})
 		//this can expand to take input from user.
