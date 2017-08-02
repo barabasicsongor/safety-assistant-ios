@@ -65,3 +65,84 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+Safety Assistant/Pods/Manifest.lock
+Safety Assistant/Pods/Alamofire/LICENSE
+Safety Assistant/Pods/Alamofire/README.md
+Safety Assistant/Pods/Alamofire/Source/AFError.swift
+Safety Assistant/Pods/Alamofire/Source/Alamofire.swift
+Safety Assistant/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+Safety Assistant/Pods/Alamofire/Source/MultipartFormData.swift
+Safety Assistant/Pods/Alamofire/Source/NetworkReachabilityManager.swift
+Safety Assistant/Pods/Alamofire/Source/Notifications.swift
+Safety Assistant/Pods/Alamofire/Source/ParameterEncoding.swift
+Safety Assistant/Pods/Alamofire/Source/Request.swift
+Safety Assistant/Pods/Alamofire/Source/Response.swift
+Safety Assistant/Pods/Alamofire/Source/ResponseSerialization.swift
+Safety Assistant/Pods/Alamofire/Source/Result.swift
+Safety Assistant/Pods/Alamofire/Source/ServerTrustPolicy.swift
+Safety Assistant/Pods/Alamofire/Source/SessionDelegate.swift
+Safety Assistant/Pods/Alamofire/Source/SessionManager.swift
+Safety Assistant/Pods/Alamofire/Source/TaskDelegate.swift
+Safety Assistant/Pods/Alamofire/Source/Timeline.swift
+Safety Assistant/Pods/Alamofire/Source/Validation.swift
+Safety Assistant/Pods/KRProgressHUD/LICENSE
+Safety Assistant/Pods/KRProgressHUD/README.md
+Safety Assistant/Pods/KRProgressHUD/KRProgressHUD/Classes/KRProgressHUD.swift
+Safety Assistant/Pods/KRProgressHUD/KRProgressHUD/Classes/KRProgressHUDExtensions.swift
+Safety Assistant/Pods/KRProgressHUD/KRProgressHUD/Classes/KRProgressHUDIconType.swift
+Safety Assistant/Pods/KRProgressHUD/KRProgressHUD/Classes/KRProgressHUDViewController.swift
+Safety Assistant/Pods/KRProgressHUD/KRProgressHUD/Classes/KRActivityIndicatorView/KRActivityIndicatorView.swift
+Safety Assistant/Pods/KRProgressHUD/KRProgressHUD/Classes/KRActivityIndicatorView/KRActivityIndicatorViewStyle.swift
+Safety Assistant/Pods/Pods.xcodeproj/project.pbxproj
+Safety Assistant/Pods/SwiftyJSON/LICENSE
+Safety Assistant/Pods/SwiftyJSON/README.md
+Safety Assistant/Pods/SwiftyJSON/Source/SwiftyJSON.swift
+Safety Assistant/Pods/Target Support Files/Alamofire/Alamofire-dummy.m
+Safety Assistant/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch
+Safety Assistant/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
+Safety Assistant/Pods/Target Support Files/Alamofire/Alamofire.modulemap
+Safety Assistant/Pods/Target Support Files/Alamofire/Alamofire.xcconfig
+Safety Assistant/Pods/Target Support Files/Alamofire/Info.plist
+Safety Assistant/Pods/Target Support Files/KRProgressHUD/Info.plist
+Safety Assistant/Pods/Target Support Files/KRProgressHUD/KRProgressHUD-dummy.m
+Safety Assistant/Pods/Target Support Files/KRProgressHUD/KRProgressHUD-prefix.pch
+Safety Assistant/Pods/Target Support Files/KRProgressHUD/KRProgressHUD-umbrella.h
+Safety Assistant/Pods/Target Support Files/KRProgressHUD/KRProgressHUD.modulemap
+Safety Assistant/Pods/Target Support Files/KRProgressHUD/KRProgressHUD.xcconfig
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Info.plist
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-acknowledgements.markdown
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-acknowledgements.plist
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-dummy.m
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-frameworks.sh
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-resources.sh
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-umbrella.h
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.debug.xcconfig
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.modulemap
+Safety Assistant/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.release.xcconfig
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Info.plist
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-acknowledgements.markdown
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-acknowledgements.plist
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-dummy.m
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-frameworks.sh
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-resources.sh
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-umbrella.h
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.debug.xcconfig
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.modulemap
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.release.xcconfig
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Info.plist
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-acknowledgements.markdown
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-acknowledgements.plist
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-dummy.m
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-frameworks.sh
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-resources.sh
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-umbrella.h
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.debug.xcconfig
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.modulemap
+Safety Assistant/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.release.xcconfig
+Safety Assistant/Pods/Target Support Files/SwiftyJSON/Info.plist
+Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-dummy.m
+Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch
+Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-umbrella.h
+Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.modulemap
+Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig
+Safety Assistant/Safety Assistant.xcworkspace/contents.xcworkspacedata
