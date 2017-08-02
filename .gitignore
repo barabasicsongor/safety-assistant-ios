@@ -146,3 +146,13 @@ Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-umbrella.h
 Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.modulemap
 Safety Assistant/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig
 Safety Assistant/Safety Assistant.xcworkspace/contents.xcworkspacedata
+Safety Assistant/Pods/SimpleAnimation/LICENSE
+Safety Assistant/Pods/SimpleAnimation/README.md
+Safety Assistant/Pods/SimpleAnimation/Source/Info.plist
+Safety Assistant/Pods/SimpleAnimation/Source/UIView+SimpleAnimation.swift
+Safety Assistant/Pods/Target Support Files/SimpleAnimation/Info.plist
+Safety Assistant/Pods/Target Support Files/SimpleAnimation/SimpleAnimation-dummy.m
+Safety Assistant/Pods/Target Support Files/SimpleAnimation/SimpleAnimation-prefix.pch
+Safety Assistant/Pods/Target Support Files/SimpleAnimation/SimpleAnimation-umbrella.h
+Safety Assistant/Pods/Target Support Files/SimpleAnimation/SimpleAnimation.modulemap
+Safety Assistant/Pods/Target Support Files/SimpleAnimation/SimpleAnimation.xcconfig
