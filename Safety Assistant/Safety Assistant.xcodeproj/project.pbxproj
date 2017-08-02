@@ -20,8 +20,24 @@
 		570B1D211F2F3B5000D74752 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D201F2F3B5000D74752 /* JSONParser.swift */; };
 		570B1D231F2F44E200D74752 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B1D221F2F44E200D74752 /* MapKit.framework */; };
 		570B1D271F2F5E7800D74752 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D261F2F5E7800D74752 /* UIColor+Hex.swift */; };
+		5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1BE1F30ABAE00D07BA3 /* AWSConfiguration.swift */; };
+		5752C1C21F30ABAE00D07BA3 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1BF1F30ABAE00D07BA3 /* AWSMobileClient.swift */; };
+		5752C1C31F30ABAE00D07BA3 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C01F30ABAE00D07BA3 /* AWSMobileHubHelper.framework */; };
+		5752C1CE1F30ABF400D07BA3 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C61F30ABF400D07BA3 /* AWSCore.framework */; };
+		5752C1CF1F30ABF400D07BA3 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C71F30ABF400D07BA3 /* AWSLex.framework */; };
+		5752C1D01F30ABF400D07BA3 /* Amazon_Software_License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5752C1C91F30ABF400D07BA3 /* Amazon_Software_License.txt */; };
+		5752C1D11F30ABF400D07BA3 /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = 5752C1CA1F30ABF400D07BA3 /* NOTICE */; };
+		5752C1D21F30ABF400D07BA3 /* CheckXcodeVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5752C1CB1F30ABF400D07BA3 /* CheckXcodeVersion.sh */; };
+		5752C1D31F30ABF400D07BA3 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; };
+		5752C1D41F30AC3800D07BA3 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C61F30ABF400D07BA3 /* AWSCore.framework */; };
+		5752C1D51F30AC3800D07BA3 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C61F30ABF400D07BA3 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5752C1D61F30AC3800D07BA3 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C71F30ABF400D07BA3 /* AWSLex.framework */; };
+		5752C1D71F30AC3800D07BA3 /* AWSLex.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C71F30ABF400D07BA3 /* AWSLex.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5752C1D81F30AC3800D07BA3 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; };
+		5752C1D91F30AC3800D07BA3 /* JSQMessagesViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5752C1E21F30AD7100D07BA3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1E11F30AD7100D07BA3 /* ChatViewController.swift */; };
 		7891010F3E7B8D66F47FE3B1 /* Pods_Safety_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */; };
-		B690AF2CEEB1DC54F0B34BDA /* Pods_Safety_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */; };
+		D285BA530F6B9F3092067084 /* Pods_Safety_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +56,22 @@
 			remoteInfo = "Safety Assistant";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5752C1DA1F30AC3800D07BA3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5752C1D91F30AC3800D07BA3 /* JSQMessagesViewController.framework in Embed Frameworks */,
+				5752C1D71F30AC3800D07BA3 /* AWSLex.framework in Embed Frameworks */,
+				5752C1D51F30AC3800D07BA3 /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safety_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +96,20 @@
 		570B1D201F2F3B5000D74752 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = Services/JSONParser.swift; sourceTree = "<group>"; };
 		570B1D221F2F44E200D74752 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		570B1D261F2F5E7800D74752 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "Common/Extensions/UIColor+Hex.swift"; sourceTree = "<group>"; };
+		5752C1901F30994600D07BA3 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "Safety Assistant/Resources/Sdk/Aws/AWSCore.framework"; sourceTree = "<group>"; };
+		5752C1921F30994800D07BA3 /* AWSLex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLex.framework; path = "Safety Assistant/Resources/Sdk/Aws/AWSLex.framework"; sourceTree = "<group>"; };
+		5752C1B21F30AA9400D07BA3 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "../../../Library/Developer/Xcode/DerivedData/Safety_Assistant-cimebvnrphklaudpiybszjwixeqy/Build/Products/Debug-iphonesimulator/AWSCore/AWSCore.framework"; sourceTree = "<group>"; };
+		5752C1B31F30AA9400D07BA3 /* AWSLex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLex.framework; path = "../../../Library/Developer/Xcode/DerivedData/Safety_Assistant-cimebvnrphklaudpiybszjwixeqy/Build/Products/Debug-iphonesimulator/AWSLex/AWSLex.framework"; sourceTree = "<group>"; };
+		5752C1BE1F30ABAE00D07BA3 /* AWSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfiguration.swift; sourceTree = "<group>"; };
+		5752C1BF1F30ABAE00D07BA3 /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		5752C1C01F30ABAE00D07BA3 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		5752C1C61F30ABF400D07BA3 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		5752C1C71F30ABF400D07BA3 /* AWSLex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSLex.framework; sourceTree = "<group>"; };
+		5752C1C91F30ABF400D07BA3 /* Amazon_Software_License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Amazon_Software_License.txt; sourceTree = "<group>"; };
+		5752C1CA1F30ABF400D07BA3 /* NOTICE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE; sourceTree = "<group>"; };
+		5752C1CB1F30ABF400D07BA3 /* CheckXcodeVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CheckXcodeVersion.sh; sourceTree = "<group>"; };
+		5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSQMessagesViewController.framework; sourceTree = "<group>"; };
+		5752C1E11F30AD7100D07BA3 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = Main/Chat/ChatViewController.swift; sourceTree = "<group>"; };
 		8399C2D2F17E033BEA29C89F /* Pods-Safety AssistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A91272CEAD221AC83A3A6D8C /* Pods-Safety Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.release.xcconfig"; sourceTree = "<group>"; };
 		BA2EEE074E9861B2902E7E55 /* Pods-Safety AssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,8 +122,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5752C1D81F30AC3800D07BA3 /* JSQMessagesViewController.framework in Frameworks */,
+				5752C1D61F30AC3800D07BA3 /* AWSLex.framework in Frameworks */,
+				5752C1D31F30ABF400D07BA3 /* JSQMessagesViewController.framework in Frameworks */,
+				5752C1D41F30AC3800D07BA3 /* AWSCore.framework in Frameworks */,
 				570B1D231F2F44E200D74752 /* MapKit.framework in Frameworks */,
-				B690AF2CEEB1DC54F0B34BDA /* Pods_Safety_Assistant.framework in Frameworks */,
+				5752C1CE1F30ABF400D07BA3 /* AWSCore.framework in Frameworks */,
+				D285BA530F6B9F3092067084 /* Pods_Safety_Assistant.framework in Frameworks */,
+				5752C1C31F30ABAE00D07BA3 /* AWSMobileHubHelper.framework in Frameworks */,
+				5752C1CF1F30ABF400D07BA3 /* AWSLex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +156,10 @@
 		03F33FDCE82EDBE0C523EDDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5752C1B21F30AA9400D07BA3 /* AWSCore.framework */,
+				5752C1B31F30AA9400D07BA3 /* AWSLex.framework */,
+				5752C1921F30994800D07BA3 /* AWSLex.framework */,
+				5752C1901F30994600D07BA3 /* AWSCore.framework */,
 				570B1D221F2F44E200D74752 /* MapKit.framework */,
 				00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */,
 				20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */,
@@ -127,6 +184,8 @@
 		570B1CD71F2F33C800D74752 = {
 			isa = PBXGroup;
 			children = (
+				5752C1C41F30ABF400D07BA3 /* Sdk */,
+				5752C1BD1F30ABAE00D07BA3 /* AmazonAws */,
 				570B1CE21F2F33C800D74752 /* Safety Assistant */,
 				570B1CF71F2F33C800D74752 /* Safety AssistantTests */,
 				570B1D021F2F33C800D74752 /* Safety AssistantUITests */,
@@ -183,6 +242,7 @@
 		570B1D111F2F343A00D74752 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5752C1E01F30AD5800D07BA3 /* Chat */,
 				570B1D161F2F346200D74752 /* Map */,
 			);
 			name = Main;
@@ -245,6 +305,61 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		5752C1BD1F30ABAE00D07BA3 /* AmazonAws */ = {
+			isa = PBXGroup;
+			children = (
+				5752C1BE1F30ABAE00D07BA3 /* AWSConfiguration.swift */,
+				5752C1BF1F30ABAE00D07BA3 /* AWSMobileClient.swift */,
+				5752C1C01F30ABAE00D07BA3 /* AWSMobileHubHelper.framework */,
+			);
+			path = AmazonAws;
+			sourceTree = "<group>";
+		};
+		5752C1C41F30ABF400D07BA3 /* Sdk */ = {
+			isa = PBXGroup;
+			children = (
+				5752C1C51F30ABF400D07BA3 /* Aws */,
+				5752C1CB1F30ABF400D07BA3 /* CheckXcodeVersion.sh */,
+				5752C1CC1F30ABF400D07BA3 /* UILibrary */,
+			);
+			path = Sdk;
+			sourceTree = "<group>";
+		};
+		5752C1C51F30ABF400D07BA3 /* Aws */ = {
+			isa = PBXGroup;
+			children = (
+				5752C1C61F30ABF400D07BA3 /* AWSCore.framework */,
+				5752C1C71F30ABF400D07BA3 /* AWSLex.framework */,
+				5752C1C81F30ABF400D07BA3 /* extras */,
+			);
+			path = Aws;
+			sourceTree = "<group>";
+		};
+		5752C1C81F30ABF400D07BA3 /* extras */ = {
+			isa = PBXGroup;
+			children = (
+				5752C1C91F30ABF400D07BA3 /* Amazon_Software_License.txt */,
+				5752C1CA1F30ABF400D07BA3 /* NOTICE */,
+			);
+			path = extras;
+			sourceTree = "<group>";
+		};
+		5752C1CC1F30ABF400D07BA3 /* UILibrary */ = {
+			isa = PBXGroup;
+			children = (
+				5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */,
+			);
+			path = UILibrary;
+			sourceTree = "<group>";
+		};
+		5752C1E01F30AD5800D07BA3 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5752C1E11F30AD7100D07BA3 /* ChatViewController.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +373,7 @@
 				570B1CDE1F2F33C800D74752 /* Resources */,
 				087C16115FCA0C5880260145 /* [CP] Embed Pods Frameworks */,
 				71720834E2F586305DD8C621 /* [CP] Copy Pods Resources */,
+				5752C1DA1F30AC3800D07BA3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,9 +480,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5752C1D11F30ABF400D07BA3 /* NOTICE in Resources */,
 				570B1D151F2F345C00D74752 /* Main.storyboard in Resources */,
 				570B1CEE1F2F33C800D74752 /* LaunchScreen.storyboard in Resources */,
 				570B1CEB1F2F33C800D74752 /* Assets.xcassets in Resources */,
+				5752C1D21F30ABF400D07BA3 /* CheckXcodeVersion.sh in Resources */,
+				5752C1D01F30ABF400D07BA3 /* Amazon_Software_License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,9 +650,12 @@
 			files = (
 				570B1CE41F2F33C800D74752 /* AppDelegate.swift in Sources */,
 				570B1D211F2F3B5000D74752 /* JSONParser.swift in Sources */,
+				5752C1C21F30ABAE00D07BA3 /* AWSMobileClient.swift in Sources */,
 				570B1D181F2F348400D74752 /* MapViewController.swift in Sources */,
+				5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */,
 				570B1D271F2F5E7800D74752 /* UIColor+Hex.swift in Sources */,
 				570B1D1E1F2F390500D74752 /* MapService.swift in Sources */,
+				5752C1E21F30AD7100D07BA3 /* ChatViewController.swift in Sources */,
 				570B1D1B1F2F34E700D74752 /* Neighbourhood.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +802,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/Sdk/UILibrary",
+				);
 				INFOPLIST_FILE = "Safety Assistant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-Assistant";
@@ -694,6 +822,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/Sdk/UILibrary",
+				);
 				INFOPLIST_FILE = "Safety Assistant/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-Assistant";

@@ -32,6 +32,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 		
     }
 	
+	// ACTIONS
+	
+	@IBAction func chatButtonPress(_ sender: Any) {
+		let chatViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+		
+		self.navigationController?.pushViewController(chatViewController, animated: true)
+	}
+	
+	
 	// MAP FUNCTIONS
 	
 	func loadMap() {
@@ -86,11 +95,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 		}
 		
 		return MKOverlayRenderer()
-	}
-	
-	// ACTIVITY INDICATOR
-	func startActivityIndicator() {
-		
 	}
 
 }

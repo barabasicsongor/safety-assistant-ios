@@ -34,7 +34,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Safety Assistant" id="p0M-l7-tTq">
-                        <barButtonItem key="rightBarButtonItem" image="robot" id="ZXt-Nn-YNC"/>
+                        <barButtonItem key="rightBarButtonItem" image="robot" id="ZXt-Nn-YNC">
+                            <connections>
+                                <action selector="chatButtonPress:" destination="uA5-9z-HfR" id="BH8-RD-EWM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="WIn-7l-9Hi" id="TQh-8b-MCu"/>
@@ -43,6 +47,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha4-sK-w25" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1096.8" y="154.27286356821591"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="XHb-IC-DAi">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="rbW-NO-HOb" customClass="ChatViewController" customModule="Safety_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9yh-ym-YPC"/>
+                        <viewControllerLayoutGuide type="bottom" id="AfW-v2-mRO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CJr-Ob-dAi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owd-d9-D2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oR7-DO-GW4">
