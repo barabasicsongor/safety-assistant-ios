@@ -13,13 +13,16 @@
 		570B1CEE1F2F33C800D74752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570B1CEC1F2F33C800D74752 /* LaunchScreen.storyboard */; };
 		570B1CF91F2F33C800D74752 /* Safety_AssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1CF81F2F33C800D74752 /* Safety_AssistantTests.swift */; };
 		570B1D041F2F33C800D74752 /* Safety_AssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D031F2F33C800D74752 /* Safety_AssistantUITests.swift */; };
-		570B1D151F2F345C00D74752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570B1D141F2F345C00D74752 /* Main.storyboard */; };
 		570B1D181F2F348400D74752 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D171F2F348400D74752 /* MapViewController.swift */; };
 		570B1D1B1F2F34E700D74752 /* Neighbourhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D1A1F2F34E700D74752 /* Neighbourhood.swift */; };
 		570B1D1E1F2F390500D74752 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D1D1F2F390500D74752 /* MapService.swift */; };
 		570B1D211F2F3B5000D74752 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D201F2F3B5000D74752 /* JSONParser.swift */; };
 		570B1D231F2F44E200D74752 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B1D221F2F44E200D74752 /* MapKit.framework */; };
 		570B1D271F2F5E7800D74752 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D261F2F5E7800D74752 /* UIColor+Hex.swift */; };
+		57386C921F31F10E00135A06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57386C911F31F10E00135A06 /* Main.storyboard */; };
+		57386C971F31F15200135A06 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386C941F31F15200135A06 /* LaunchViewController.swift */; };
+		57386C981F31F15200135A06 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386C961F31F15200135A06 /* RegisterViewController.swift */; };
+		57386C9A1F31F1A800135A06 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57386C991F31F1A800135A06 /* UIViewController+HideKeyboard.swift */; };
 		5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1BE1F30ABAE00D07BA3 /* AWSConfiguration.swift */; };
 		5752C1C21F30ABAE00D07BA3 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1BF1F30ABAE00D07BA3 /* AWSMobileClient.swift */; };
 		5752C1C31F30ABAE00D07BA3 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C01F30ABAE00D07BA3 /* AWSMobileHubHelper.framework */; };
@@ -89,13 +92,16 @@
 		570B1CFF1F2F33C800D74752 /* Safety AssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safety AssistantUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		570B1D031F2F33C800D74752 /* Safety_AssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safety_AssistantUITests.swift; sourceTree = "<group>"; };
 		570B1D051F2F33C800D74752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		570B1D141F2F345C00D74752 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		570B1D171F2F348400D74752 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Main/Map/MapViewController.swift; sourceTree = "<group>"; };
 		570B1D1A1F2F34E700D74752 /* Neighbourhood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Neighbourhood.swift; path = Models/Neighbourhood.swift; sourceTree = "<group>"; };
 		570B1D1D1F2F390500D74752 /* MapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapService.swift; path = Services/MapService.swift; sourceTree = "<group>"; };
 		570B1D201F2F3B5000D74752 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = Services/JSONParser.swift; sourceTree = "<group>"; };
 		570B1D221F2F44E200D74752 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		570B1D261F2F5E7800D74752 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "Common/Extensions/UIColor+Hex.swift"; sourceTree = "<group>"; };
+		57386C911F31F10E00135A06 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resources/Storyboards/Main.storyboard; sourceTree = "<group>"; };
+		57386C941F31F15200135A06 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		57386C961F31F15200135A06 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		57386C991F31F1A800135A06 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+HideKeyboard.swift"; path = "Common/Extensions/UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		5752C1901F30994600D07BA3 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "Safety Assistant/Resources/Sdk/Aws/AWSCore.framework"; sourceTree = "<group>"; };
 		5752C1921F30994800D07BA3 /* AWSLex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLex.framework; path = "Safety Assistant/Resources/Sdk/Aws/AWSLex.framework"; sourceTree = "<group>"; };
 		5752C1B21F30AA9400D07BA3 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "../../../Library/Developer/Xcode/DerivedData/Safety_Assistant-cimebvnrphklaudpiybszjwixeqy/Build/Products/Debug-iphonesimulator/AWSCore/AWSCore.framework"; sourceTree = "<group>"; };
@@ -242,6 +248,8 @@
 		570B1D111F2F343A00D74752 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				57386C931F31F15200135A06 /* Launch */,
+				57386C951F31F15200135A06 /* Register */,
 				5752C1E01F30AD5800D07BA3 /* Chat */,
 				570B1D161F2F346200D74752 /* Map */,
 			);
@@ -259,7 +267,7 @@
 		570B1D131F2F344600D74752 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				570B1D141F2F345C00D74752 /* Main.storyboard */,
+				57386C911F31F10E00135A06 /* Main.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -300,9 +308,28 @@
 		570B1D251F2F5E5000D74752 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				57386C991F31F1A800135A06 /* UIViewController+HideKeyboard.swift */,
 				570B1D261F2F5E7800D74752 /* UIColor+Hex.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		57386C931F31F15200135A06 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				57386C941F31F15200135A06 /* LaunchViewController.swift */,
+			);
+			name = Launch;
+			path = Main/Launch;
+			sourceTree = "<group>";
+		};
+		57386C951F31F15200135A06 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				57386C961F31F15200135A06 /* RegisterViewController.swift */,
+			);
+			name = Register;
+			path = Main/Register;
 			sourceTree = "<group>";
 		};
 		5752C1BD1F30ABAE00D07BA3 /* AmazonAws */ = {
@@ -481,7 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5752C1D11F30ABF400D07BA3 /* NOTICE in Resources */,
-				570B1D151F2F345C00D74752 /* Main.storyboard in Resources */,
+				57386C921F31F10E00135A06 /* Main.storyboard in Resources */,
 				570B1CEE1F2F33C800D74752 /* LaunchScreen.storyboard in Resources */,
 				570B1CEB1F2F33C800D74752 /* Assets.xcassets in Resources */,
 				5752C1D21F30ABF400D07BA3 /* CheckXcodeVersion.sh in Resources */,
@@ -649,12 +676,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				570B1CE41F2F33C800D74752 /* AppDelegate.swift in Sources */,
+				57386C981F31F15200135A06 /* RegisterViewController.swift in Sources */,
+				57386C971F31F15200135A06 /* LaunchViewController.swift in Sources */,
 				570B1D211F2F3B5000D74752 /* JSONParser.swift in Sources */,
 				5752C1C21F30ABAE00D07BA3 /* AWSMobileClient.swift in Sources */,
 				570B1D181F2F348400D74752 /* MapViewController.swift in Sources */,
 				5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */,
 				570B1D271F2F5E7800D74752 /* UIColor+Hex.swift in Sources */,
 				570B1D1E1F2F390500D74752 /* MapService.swift in Sources */,
+				57386C9A1F31F1A800135A06 /* UIViewController+HideKeyboard.swift in Sources */,
 				5752C1E21F30AD7100D07BA3 /* ChatViewController.swift in Sources */,
 				570B1D1B1F2F34E700D74752 /* Neighbourhood.swift in Sources */,
 			);

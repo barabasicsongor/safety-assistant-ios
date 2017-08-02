@@ -52,8 +52,8 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		
 		// Initialize avatars for client and server
 		
-		clientImage = JSQMessagesAvatarImageFactory().avatarImage(with: UIImage(named: "robot_avatar")!)
-		serverImage = JSQMessagesAvatarImageFactory().avatarImage(with: UIImage(named: "robot_avatar")!)
+		clientImage = JSQMessagesAvatarImageFactory().avatarImage(with: UIImage(named: "robot")!)
+		serverImage = JSQMessagesAvatarImageFactory().avatarImage(with: UIImage(named: "robot")!)
 		
 		// set the keyboard type
 		self.inputToolbar.contentView?.textView?.keyboardType = UIKeyboardType.default
@@ -234,4 +234,3 @@ extension ChatViewController: AWSLexInteractionDelegate {
 		textModeSwitchingCompletion = completionSource
 	}
 }
-
