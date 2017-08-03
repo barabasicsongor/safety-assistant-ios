@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WIn-7l-9Hi">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIn-7l-9Hi">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZKQ-Z0-NhI">
@@ -74,6 +74,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Safety Assistant" id="p0M-l7-tTq">
+                        <barButtonItem key="leftBarButtonItem" image="profile" id="jQx-I3-bwZ">
+                            <connections>
+                                <action selector="profileButtonPress:" destination="uA5-9z-HfR" id="dVj-9M-F1j"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="robot_1" id="ZXt-Nn-YNC">
                             <connections>
                                 <action selector="chatButtonPress:" destination="uA5-9z-HfR" id="BH8-RD-EWM"/>
@@ -244,6 +249,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="BXK-Tu-vTM" id="CVo-Zs-pqa"/>
                         <outlet property="imageView" destination="7Gm-X9-ybl" id="uQm-bD-BXY"/>
                         <outlet property="textField" destination="bnu-Mn-p3v" id="yAS-9s-PQF"/>
                     </connections>
@@ -256,6 +262,7 @@
     <resources>
         <image name="camera" width="2400" height="2400"/>
         <image name="logo" width="1400" height="1400"/>
+        <image name="profile" width="30" height="30"/>
         <image name="robot_1" width="30" height="30"/>
     </resources>
 </document>

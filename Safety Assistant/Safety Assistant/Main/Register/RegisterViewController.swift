@@ -9,13 +9,24 @@
 import UIKit
 import MapKit
 
+enum RegisterViewControllerType {
+	case Registration
+	case Update
+}
+
 class RegisterViewController: UIViewController {
+	
+	var type: RegisterViewControllerType?
 	
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var textField: UITextField!
+	@IBOutlet weak var button: UIButton!
 	
 	let picker = UIImagePickerController()
 	var selectedImg = false
+	
+	var edited = false
+	var leftNavBarItem: UIBarButtonItem?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +37,36 @@ class RegisterViewController: UIViewController {
         picker.delegate = self
 		
 		textField.delegate = self
+		textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 		
 		self.hideKeyboardWhenTappedAround()
+		
+		setupView()
     }
+	
+	// VIEW SETUP
+	
+	func setupView() {
+		if self.type == .Update {
+			configureNavbar()
+			
+			self.textField.text = UserDefaults.standard.string(forKey: "name")
+			self.imageView.image = getUserImage()
+			self.button.setTitle("Save", for: .normal)
+		}
+	}
+	
+	func configureNavbar() {
+		self.navigationItem.hidesBackButton = true
+		self.navigationItem.title = "Profile"
+		
+		let btn = UIButton(type: .custom)
+		btn.setImage(UIImage(named: "back_button"), for: .normal)
+		btn.frame = CGRect(x: 0, y: 0, width: 35, height: 30)
+		btn.addTarget(self, action: #selector(RegisterViewController.backButtonPress), for: .touchUpInside)
+		self.leftNavBarItem = UIBarButtonItem(customView: btn)
+		self.navigationItem.setLeftBarButton(self.leftNavBarItem, animated: true)
+	}
 	
 	// ACTIONS
 	
@@ -60,16 +98,36 @@ class RegisterViewController: UIViewController {
 	
 	@IBAction func continueButtonPress(_ sender: Any) {
 		
-		if selectedImg == false {
-			alert(title: "No image", message: "Please set a profile picture for a friendlier environment")
-		} else if textField.text!.characters.count == 0 {
-			alert(title: "No name", message: "Please set a name for a friendlier environment")
-		} else {
-			save(name: textField.text!, image: imageView.image!)
-			UserDefaults.standard.set(true, forKey: "registered")
+		if type == .Update {
+			if self.edited == true {
+				save(name: self.textField.text!, image: self.imageView.image!)
+			}
 			
-			let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapNavigationController") as! UINavigationController
-			present(navController, animated: true, completion: nil)
+			self.navigationController?.popViewController(animated: true)
+		} else {
+			if selectedImg == false {
+				alert(title: "No image", message: "Please set a profile picture for a friendlier environment")
+			} else if textField.text!.characters.count == 0 {
+				alert(title: "No name", message: "Please set a name for a friendlier environment")
+			} else {
+				save(name: textField.text!, image: imageView.image!)
+				UserDefaults.standard.set(true, forKey: "registered")
+				
+				let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapNavigationController") as! UINavigationController
+				present(navController, animated: true, completion: nil)
+			}
+		}
+	}
+	
+	func backButtonPress() {
+		self.navigationController?.popViewController(animated: true)
+	}
+	
+	func textFieldDidChange(_ textField: UITextField) {
+		let name = UserDefaults.standard.string(forKey: "name")
+		
+		if name != self.textField.text! {
+			self.edited = true
 		}
 	}
 	
@@ -129,6 +187,11 @@ class RegisterViewController: UIViewController {
 		let documentsDirectory = paths[0]
 		return documentsDirectory
 	}
+	
+	func getUserImage() -> UIImage {
+		let filename = getDocumentsDirectory().appendingPathComponent("profile_pic.png")
+		return UIImage(contentsOfFile: filename.path)!
+	}
 
 }
 
@@ -139,6 +202,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
 		imageView.contentMode = .scaleAspectFill
 		imageView.image = chosenImage
 		selectedImg = true
+		self.edited = true
 		dismiss(animated: true, completion: nil)
 	}
 	

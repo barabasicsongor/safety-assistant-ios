@@ -39,6 +39,8 @@
 		5752C1D81F30AC3800D07BA3 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; };
 		5752C1D91F30AC3800D07BA3 /* JSQMessagesViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5752C1E21F30AD7100D07BA3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1E11F30AD7100D07BA3 /* ChatViewController.swift */; };
+		579579821F331CF60078E3A7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579579811F331CF60078E3A7 /* APIService.swift */; };
+		579579841F331D4C0078E3A7 /* Date+WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579579831F331D4C0078E3A7 /* Date+WeekDay.swift */; };
 		7891010F3E7B8D66F47FE3B1 /* Pods_Safety_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */; };
 		D285BA530F6B9F3092067084 /* Pods_Safety_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,8 @@
 		5752C1CB1F30ABF400D07BA3 /* CheckXcodeVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CheckXcodeVersion.sh; sourceTree = "<group>"; };
 		5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSQMessagesViewController.framework; sourceTree = "<group>"; };
 		5752C1E11F30AD7100D07BA3 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = Main/Chat/ChatViewController.swift; sourceTree = "<group>"; };
+		579579811F331CF60078E3A7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = Services/APIService.swift; sourceTree = "<group>"; };
+		579579831F331D4C0078E3A7 /* Date+WeekDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+WeekDay.swift"; path = "Common/Extensions/Date+WeekDay.swift"; sourceTree = "<group>"; };
 		8399C2D2F17E033BEA29C89F /* Pods-Safety AssistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A91272CEAD221AC83A3A6D8C /* Pods-Safety Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.release.xcconfig"; sourceTree = "<group>"; };
 		BA2EEE074E9861B2902E7E55 /* Pods-Safety AssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 			children = (
 				570B1D1D1F2F390500D74752 /* MapService.swift */,
 				570B1D201F2F3B5000D74752 /* JSONParser.swift */,
+				579579811F331CF60078E3A7 /* APIService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 			children = (
 				57386C991F31F1A800135A06 /* UIViewController+HideKeyboard.swift */,
 				570B1D261F2F5E7800D74752 /* UIColor+Hex.swift */,
+				579579831F331D4C0078E3A7 /* Date+WeekDay.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -683,7 +689,9 @@
 				570B1D181F2F348400D74752 /* MapViewController.swift in Sources */,
 				5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */,
 				570B1D271F2F5E7800D74752 /* UIColor+Hex.swift in Sources */,
+				579579841F331D4C0078E3A7 /* Date+WeekDay.swift in Sources */,
 				570B1D1E1F2F390500D74752 /* MapService.swift in Sources */,
+				579579821F331CF60078E3A7 /* APIService.swift in Sources */,
 				57386C9A1F31F1A800135A06 /* UIViewController+HideKeyboard.swift in Sources */,
 				5752C1E21F30AD7100D07BA3 /* ChatViewController.swift in Sources */,
 				570B1D1B1F2F34E700D74752 /* Neighbourhood.swift in Sources */,
