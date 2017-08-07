@@ -39,6 +39,7 @@
 		5752C1D81F30AC3800D07BA3 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; };
 		5752C1D91F30AC3800D07BA3 /* JSQMessagesViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5752C1E21F30AD7100D07BA3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1E11F30AD7100D07BA3 /* ChatViewController.swift */; };
+		577E86481F3460400050CB4C /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E86471F3460400050CB4C /* LocationSearchTableViewController.swift */; };
 		579579821F331CF60078E3A7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579579811F331CF60078E3A7 /* APIService.swift */; };
 		579579841F331D4C0078E3A7 /* Date+WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579579831F331D4C0078E3A7 /* Date+WeekDay.swift */; };
 		7891010F3E7B8D66F47FE3B1 /* Pods_Safety_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */; };
@@ -118,6 +119,7 @@
 		5752C1CB1F30ABF400D07BA3 /* CheckXcodeVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CheckXcodeVersion.sh; sourceTree = "<group>"; };
 		5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSQMessagesViewController.framework; sourceTree = "<group>"; };
 		5752C1E11F30AD7100D07BA3 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = Main/Chat/ChatViewController.swift; sourceTree = "<group>"; };
+		577E86471F3460400050CB4C /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationSearchTableViewController.swift; path = Main/Map/LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		579579811F331CF60078E3A7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = Services/APIService.swift; sourceTree = "<group>"; };
 		579579831F331D4C0078E3A7 /* Date+WeekDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+WeekDay.swift"; path = "Common/Extensions/Date+WeekDay.swift"; sourceTree = "<group>"; };
 		8399C2D2F17E033BEA29C89F /* Pods-Safety AssistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				570B1D171F2F348400D74752 /* MapViewController.swift */,
+				577E86471F3460400050CB4C /* LocationSearchTableViewController.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				5752C1C21F30ABAE00D07BA3 /* AWSMobileClient.swift in Sources */,
 				570B1D181F2F348400D74752 /* MapViewController.swift in Sources */,
 				5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */,
+				577E86481F3460400050CB4C /* LocationSearchTableViewController.swift in Sources */,
 				570B1D271F2F5E7800D74752 /* UIColor+Hex.swift in Sources */,
 				579579841F331D4C0078E3A7 /* Date+WeekDay.swift in Sources */,
 				570B1D1E1F2F390500D74752 /* MapService.swift in Sources */,

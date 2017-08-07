@@ -11,22 +11,28 @@ import MapKit
 import CoreLocation
 import KRProgressHUD
 
+protocol HandleMapSearch {
+	func dropPinZoom(placemark: MKPlacemark)
+}
+
 class MapViewController: UIViewController {
 	
 	@IBOutlet weak var mapView: MKMapView!
-	@IBOutlet weak var textField: UITextField!
-	@IBOutlet weak var tableView: UITableView!
+	
+	var rightBarButton: UIBarButtonItem!
+	var leftBarButton: UIBarButtonItem!
 	
 	var nhoods: [Neighbourhood] = []
 	var polygons: [MKPolygon] = []
 	var sanFrancisco = CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351)
 	
 	let locationManager = CLLocationManager()
-	var matchingItems: [MKMapItem] = []
 	var selectedPin: MKPlacemark? = nil
 	
-	var isTextFieldHidden = true
-	var isTableViewHidden = true
+	var resultSearchController: UISearchController? = nil
+	var searchBar: UISearchBar!
+	
+	var isSearchFieldHidden = true
 	
 	
     override func viewDidLoad() {
@@ -34,19 +40,27 @@ class MapViewController: UIViewController {
 		
 		KRProgressHUD.show()
 		
-		self.tableView.delegate = self
-		self.tableView.dataSource = self
-		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+		setupNavBar()
 		
 		self.mapView.isHidden = true
+		
+		let locationSearchTable = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LocationSearchTableViewController") as? LocationSearchTableViewController
+		locationSearchTable?.mapView = self.mapView
+		locationSearchTable?.handleMapSearchDelegate = self
+		resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+		resultSearchController?.searchResultsUpdater = locationSearchTable
+		resultSearchController?.hidesNavigationBarDuringPresentation = false
+		resultSearchController?.dimsBackgroundDuringPresentation = true
+		definesPresentationContext = true
+		
+		searchBar = resultSearchController?.searchBar
+		searchBar.sizeToFit()
+		searchBar.placeholder = "Search for places"
 		
 		self.locationManager.delegate = self
 		self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		self.locationManager.requestWhenInUseAuthorization()
 		self.locationManager.requestLocation()
-		
-		textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-		self.textField.delegate = self
 		
 		MapService(url: "http://barabasicsongor.com/heatmap.json").makeRequest(completion: { [weak self] result in
 			self?.nhoods = result
@@ -55,9 +69,28 @@ class MapViewController: UIViewController {
 		
     }
 	
+	// VIEW SETUP
+	
+	func setupNavBar() {
+		let btn1 = UIButton(type: .custom)
+		btn1.setImage(UIImage(named: "profile"), for: .normal)
+		btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+		btn1.addTarget(self, action: #selector(MapViewController.profileButtonPress), for: .touchUpInside)
+		self.leftBarButton = UIBarButtonItem(customView: btn1)
+		self.navigationItem.setLeftBarButton(self.leftBarButton, animated: true)
+
+		let btn2 = UIButton(type: .custom)
+		btn2.setImage(UIImage(named: "robot_1"), for: .normal)
+		btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+		btn2.addTarget(self, action: #selector(MapViewController.chatButtonPress), for: .touchUpInside)
+		self.rightBarButton = UIBarButtonItem(customView: btn2)
+		self.navigationItem.setRightBarButton(self.rightBarButton, animated: true)
+
+	}
+	
 	// ACTIONS
 	
-	@IBAction func chatButtonPress(_ sender: Any) {
+	func chatButtonPress() {
 		KRProgressHUD.show()
 		let chatViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
 		
@@ -65,44 +98,12 @@ class MapViewController: UIViewController {
 		KRProgressHUD.dismiss()
 	}
 	
-	@IBAction func profileButtonPress(_ sender: Any) {
+	func profileButtonPress() {
 		KRProgressHUD.show()
 		let registeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
 		registeVC.type = .Update
 		self.navigationController?.pushViewController(registeVC, animated: true)
 		KRProgressHUD.dismiss()
-	}
-
-	
-	func textFieldDidChange(_ textField: UITextField) {
-		
-		if textField.text?.characters.count == 0 {
-			
-			if isTableViewHidden == false {
-				showTableView()
-			}
-			
-			matchingItems = []
-			self.tableView.reloadData()
-		} else {
-			if isTableViewHidden {
-				showTableView()
-			}
-			
-			let request = MKLocalSearchRequest()
-			request.naturalLanguageQuery = self.textField.text
-			request.region = self.mapView.region
-			let search = MKLocalSearch(request: request)
-			search.start(completionHandler: { [weak self] response, _ in
-				guard let response = response else {
-					return
-				}
-				
-				self?.matchingItems = response.mapItems
-				self?.tableView.reloadData()
-			})
-			
-		}
 	}
 	
 	// MAP FUNCTIONS
@@ -115,7 +116,7 @@ class MapViewController: UIViewController {
 		
 		self.addPolygons()
 		
-		let tap = UITapGestureRecognizer(target: self, action: #selector(MapViewController.showTextField))
+		let tap = UITapGestureRecognizer(target: self, action: #selector(MapViewController.changeSearchFieldState))
 		self.mapView.addGestureRecognizer(tap)
 		
 		self.mapView.isHidden = false
@@ -143,41 +144,22 @@ class MapViewController: UIViewController {
 	
 	// HELPER FUNCTIONS
 	
-	func showTextField() {
-		if isTextFieldHidden {
-			isTextFieldHidden = false
-			UIView.animate(withDuration: 0.25, animations: { [weak self] in
-				self?.textField.alpha = 1.0
-			})
+	func changeSearchFieldState() {
+		let fadeAnimation = CATransition()
+		fadeAnimation.duration = 0.25
+		fadeAnimation.type = kCATransitionFade
+		self.navigationController?.navigationBar.layer.add(fadeAnimation, forKey: "fadeTitleView")
+		
+		if isSearchFieldHidden {
+			isSearchFieldHidden = false
+			self.navigationItem.leftBarButtonItem = nil
+			self.navigationItem.rightBarButtonItem = nil
+			self.navigationItem.titleView = self.searchBar
 		} else {
-			isTextFieldHidden = true
-			self.view.endEditing(true)
-			
-			if isTableViewHidden == false {
-				showTableView()
-			}
-			
-			UIView.animate(withDuration: 0.25, animations: { [weak self] in
-				self?.textField.alpha = 0.0
-			})
-			
-			self.textField.text = ""
-			self.matchingItems = []
-			self.tableView.reloadData()
-		}
-	}
-	
-	func showTableView() {
-		if isTableViewHidden {
-			isTableViewHidden = false
-			UIView.animate(withDuration: 0.1, animations: { [weak self] in
-				self?.tableView.alpha = 1.0
-			})
-		} else {
-			isTableViewHidden = true
-			UIView.animate(withDuration: 0.1, animations: { [weak self] in
-				self?.tableView.alpha = 0.0
-			})
+			isSearchFieldHidden = true
+			self.navigationItem.leftBarButtonItem = self.leftBarButton
+			self.navigationItem.rightBarButtonItem = self.rightBarButton
+			self.navigationItem.titleView = nil
 		}
 	}
 	
@@ -307,52 +289,23 @@ extension MapViewController: CLLocationManagerDelegate {
 	
 }
 
-extension MapViewController: UITableViewDelegate, UITableViewDataSource {
-	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.matchingItems.count
-	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		let selectedItem = self.matchingItems[indexPath.row].placemark
+extension MapViewController: HandleMapSearch {
+	func dropPinZoom(placemark: MKPlacemark) {
+		self.selectedPin = placemark
+		mapView.removeAnnotations(mapView.annotations)
 		
-		cell.textLabel?.text = parseAddress(selectedItem: selectedItem)
-		cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size: 12.0)
-		
-		return cell
-	}
-	
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let selectedItem = self.matchingItems[indexPath.row].placemark
-		
-		self.selectedPin = selectedItem
-		
-		self.mapView.removeAnnotations(self.mapView.annotations)
 		let annotation = MKPointAnnotation()
-		annotation.coordinate = selectedItem.coordinate
-		annotation.title = selectedItem.title
-		if let city = selectedItem.locality,
-			let state = selectedItem.administrativeArea {
+		annotation.coordinate = placemark.coordinate
+		annotation.title = placemark.name
+		
+		if let city = placemark.locality,
+			let state = placemark.administrativeArea {
 			annotation.subtitle = String(format: "%@ %@", city, state)
 		}
-		self.mapView.addAnnotation(annotation)
+		mapView.addAnnotation(annotation)
 		let span = MKCoordinateSpanMake(0.05, 0.05)
-		let region = MKCoordinateRegionMake(selectedItem.coordinate, span)
-		self.mapView.setRegion(region, animated: true)
-		
-		showTableView()
-		showTextField()
-		
+		let region = MKCoordinateRegionMake(placemark.coordinate, span)
+		mapView.setRegion(region, animated: true)
 	}
-	
 }
 
-extension MapViewController: UITextFieldDelegate {
-	
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		self.view.endEditing(true)
-		return false
-	}
-	
-}
