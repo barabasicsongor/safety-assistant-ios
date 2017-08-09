@@ -57,10 +57,10 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		
 		// set the keyboard type
 		self.inputToolbar.contentView?.textView?.keyboardType = UIKeyboardType.default
+		self.inputToolbar.contentView?.textView?.placeHolder = "How can I help?"
 		
 		// initialize the messages list
 		self.messages = [JSQMessage]()
-		self.messages?.append(JSQMessage(senderId: ServerSenderId, senderDisplayName: senderDisplayName(), date: Date(), text: "Hello " + senderDisplayName() + "! How can I help you?"))
 		
 		// set the colors for message bubbles
 		let bubbleFactory = JSQMessagesBubbleImageFactory()
@@ -71,6 +71,18 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		
 		self.navigationController?.navigationBar.isTranslucent = false
 	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(true)
+		self.showTypingIndicator = true
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [weak self] in
+			self?.messages?.append(JSQMessage(senderId: ServerSenderId, senderDisplayName: (self?.senderDisplayName())!, date: Date(), text: "Hello " + (self?.senderDisplayName())! + "! How can I help you?"))
+			self?.collectionView?.reloadData()
+			self?.showTypingIndicator = false
+		})
+	}
+	
+	// ACTIONS
 	
 	func backButtonPress() {
 		self.navigationController?.popViewController(animated: true)
