@@ -9,14 +9,7 @@
 import UIKit
 import MapKit
 
-enum RegisterViewControllerType {
-	case Registration
-	case Update
-}
-
 class RegisterViewController: UIViewController {
-	
-	var type: RegisterViewControllerType?
 	
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var textField: UITextField!
@@ -41,20 +34,7 @@ class RegisterViewController: UIViewController {
 		
 		self.hideKeyboardWhenTappedAround()
 		
-		setupView()
     }
-	
-	// VIEW SETUP
-	
-	func setupView() {
-		if self.type == .Update {
-			configureNavbar()
-			
-			self.textField.text = UserDefaults.standard.string(forKey: "name")
-			self.imageView.image = getUserImage()
-			self.button.setTitle("Save", for: .normal)
-		}
-	}
 	
 	func configureNavbar() {
 		self.navigationItem.hidesBackButton = true
@@ -98,25 +78,18 @@ class RegisterViewController: UIViewController {
 	
 	@IBAction func continueButtonPress(_ sender: Any) {
 		
-		if type == .Update {
-			if self.edited == true {
-				save(name: self.textField.text!, image: self.imageView.image!)
-			}
-			
-			self.navigationController?.popViewController(animated: true)
+		if selectedImg == false {
+			alert(title: "No image", message: "Please set a profile picture for a friendlier environment")
+		} else if textField.text!.characters.count == 0 {
+			alert(title: "No name", message: "Please set a name for a friendlier environment")
 		} else {
-			if selectedImg == false {
-				alert(title: "No image", message: "Please set a profile picture for a friendlier environment")
-			} else if textField.text!.characters.count == 0 {
-				alert(title: "No name", message: "Please set a name for a friendlier environment")
-			} else {
-				save(name: textField.text!, image: imageView.image!)
-				UserDefaults.standard.set(true, forKey: "registered")
-				
-				let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapNavigationController") as! UINavigationController
-				present(navController, animated: true, completion: nil)
-			}
+			save(name: textField.text!, image: imageView.image!)
+			UserDefaults.standard.set(true, forKey: "registered")
+			
+			let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapNavigationController") as! UINavigationController
+			present(navController, animated: true, completion: nil)
 		}
+		
 	}
 	
 	func backButtonPress() {

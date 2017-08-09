@@ -20,7 +20,6 @@ class MapViewController: UIViewController {
 	@IBOutlet weak var mapView: MKMapView!
 	
 	var rightBarButton: UIBarButtonItem!
-	var leftBarButton: UIBarButtonItem!
 	
 	var nhoods: [Neighbourhood] = []
 	var polygons: [MKPolygon] = []
@@ -72,12 +71,6 @@ class MapViewController: UIViewController {
 	// VIEW SETUP
 	
 	func setupNavBar() {
-		let btn1 = UIButton(type: .custom)
-		btn1.setImage(UIImage(named: "profile"), for: .normal)
-		btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-		btn1.addTarget(self, action: #selector(MapViewController.profileButtonPress), for: .touchUpInside)
-		self.leftBarButton = UIBarButtonItem(customView: btn1)
-		self.navigationItem.setLeftBarButton(self.leftBarButton, animated: true)
 
 		let btn2 = UIButton(type: .custom)
 		btn2.setImage(UIImage(named: "robot_1"), for: .normal)
@@ -95,14 +88,6 @@ class MapViewController: UIViewController {
 		let chatViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
 		
 		self.navigationController?.pushViewController(chatViewController, animated: true)
-		KRProgressHUD.dismiss()
-	}
-	
-	func profileButtonPress() {
-		KRProgressHUD.show()
-		let registeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
-		registeVC.type = .Update
-		self.navigationController?.pushViewController(registeVC, animated: true)
 		KRProgressHUD.dismiss()
 	}
 	
@@ -152,12 +137,10 @@ class MapViewController: UIViewController {
 		
 		if isSearchFieldHidden {
 			isSearchFieldHidden = false
-			self.navigationItem.leftBarButtonItem = nil
 			self.navigationItem.rightBarButtonItem = nil
 			self.navigationItem.titleView = self.searchBar
 		} else {
 			isSearchFieldHidden = true
-			self.navigationItem.leftBarButtonItem = self.leftBarButton
 			self.navigationItem.rightBarButtonItem = self.rightBarButton
 			self.navigationItem.titleView = nil
 		}

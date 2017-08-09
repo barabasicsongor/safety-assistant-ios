@@ -39,7 +39,6 @@ class LaunchViewController: UIViewController {
 	
 	func showRegistrationPage() {
 		let registeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
-		registeVC.type = .Registration
 		self.present(registeVC, animated: true, completion: nil)
 	}
 

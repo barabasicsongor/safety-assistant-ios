@@ -77,7 +77,21 @@ extension LocationSearchTableViewController: UISearchResultsUpdating {
 			guard let response = response else {
 				return
 			}
+			
 			self.matchingItems = response.mapItems
+			var newItems = [MKMapItem]()
+			
+			for x in self.matchingItems {
+				if let city = x.placemark.locality {
+					if city == "San Francisco" {
+						newItems.append(x)
+					}
+				} else {
+					newItems.append(x)
+				}
+			}
+			
+			self.matchingItems = newItems
 			self.tableView.reloadData()
 		}
 	}
