@@ -18,8 +18,11 @@ protocol HandleMapSearch {
 class MapViewController: UIViewController {
 	
 	@IBOutlet weak var mapView: MKMapView!
+	@IBOutlet weak var searchButton: UIButton!
+	@IBOutlet weak var zoomButton: UIButton!
 	
 	var rightBarButton: UIBarButtonItem!
+	var leftBarButton: UIBarButtonItem!
 	
 	var nhoods: [Neighbourhood] = []
 	var polygons: [MKPolygon] = []
@@ -53,6 +56,7 @@ class MapViewController: UIViewController {
 		definesPresentationContext = true
 		
 		searchBar = resultSearchController?.searchBar
+		searchBar.delegate = self
 		searchBar.sizeToFit()
 		searchBar.placeholder = "Search for places"
 		
@@ -71,6 +75,13 @@ class MapViewController: UIViewController {
 	// VIEW SETUP
 	
 	func setupNavBar() {
+		
+		let btn1 = UIButton(type: .custom)
+		btn1.setImage(UIImage(named: "info_icon"), for: .normal)
+		btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+		btn1.addTarget(self, action: #selector(MapViewController.mapInfoButtonPress), for: .touchUpInside)
+		self.leftBarButton = UIBarButtonItem(customView: btn1)
+		self.navigationItem.setLeftBarButton(self.leftBarButton, animated: true)
 
 		let btn2 = UIButton(type: .custom)
 		btn2.setImage(UIImage(named: "robot_1"), for: .normal)
@@ -91,17 +102,46 @@ class MapViewController: UIViewController {
 		KRProgressHUD.dismiss()
 	}
 	
+	func mapInfoButtonPress() {
+		let alert = UIAlertController(title: "Map", message: "Choose a map type", preferredStyle: .actionSheet)
+		alert.addAction(UIAlertAction(title: "Hybrid", style: .default, handler: { [weak self] alrt in
+			self?.mapView.mapType = .hybrid
+		}))
+		alert.addAction(UIAlertAction(title: "Satellite", style: .default, handler: { [weak self] alrt in
+			self?.mapView.mapType = .satellite
+		}))
+		alert.addAction(UIAlertAction(title: "Standard", style: .default, handler: { [weak self] alrt in
+			self?.mapView.mapType = .standard
+		}))
+		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+		present(alert, animated: true, completion: nil)
+	}
+	
+	@IBAction func userLocationZoomButtonPress(_ sender: Any) {
+		self.mapView.setCenter(self.mapView.userLocation.coordinate, animated: true)
+	}
+	
+	@IBAction func searchButtonPress(_ sender: Any) {
+		changeSearchFieldState()
+	}
+	
+	func mapViewTapGestureRecognizerTap() {
+		if isSearchFieldHidden == false {
+			changeSearchFieldState()
+		}
+	}
+	
 	// MAP FUNCTIONS
 	
 	func loadMap() {
 		self.mapView.delegate = self
-		let span = MKCoordinateSpanMake(0.15, 0.15)
+		let span = MKCoordinateSpanMake(0.2, 0.2)
 		let region = MKCoordinateRegion(center: sanFrancisco, span: span)
 		self.mapView.setRegion(region, animated: true)
 		
 		self.addPolygons()
 		
-		let tap = UITapGestureRecognizer(target: self, action: #selector(MapViewController.changeSearchFieldState))
+		let tap = UITapGestureRecognizer(target: self, action: #selector(MapViewController.mapViewTapGestureRecognizerTap))
 		self.mapView.addGestureRecognizer(tap)
 		
 		self.mapView.isHidden = false
@@ -138,10 +178,15 @@ class MapViewController: UIViewController {
 		if isSearchFieldHidden {
 			isSearchFieldHidden = false
 			self.navigationItem.rightBarButtonItem = nil
+			self.searchButton.isHidden = true
+			self.zoomButton.isHidden = true
 			self.navigationItem.titleView = self.searchBar
+			self.searchBar.becomeFirstResponder()
 		} else {
 			isSearchFieldHidden = true
 			self.navigationItem.rightBarButtonItem = self.rightBarButton
+			self.searchButton.isHidden = false
+			self.zoomButton.isHidden = false
 			self.navigationItem.titleView = nil
 		}
 	}
@@ -290,5 +335,13 @@ extension MapViewController: HandleMapSearch {
 		let region = MKCoordinateRegionMake(placemark.coordinate, span)
 		mapView.setRegion(region, animated: true)
 	}
+}
+
+extension MapViewController: UISearchBarDelegate {
+	
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		changeSearchFieldState()
+	}
+	
 }
 

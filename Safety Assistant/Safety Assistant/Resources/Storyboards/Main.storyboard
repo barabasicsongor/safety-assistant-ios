@@ -24,11 +24,57 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIn-7l-9Hi">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lh-aO-2PS">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="i1C-MS-KJC"/>
+                                    <constraint firstAttribute="height" constant="50" id="mZf-hv-r3Y"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="10" height="10"/>
+                                <state key="normal" image="zoom_icon">
+                                    <color key="titleColor" red="0.80272795983875789" green="0.81067576142131981" blue="0.81067576142131981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="userLocationZoomButtonPress:" destination="uA5-9z-HfR" eventType="touchUpInside" id="kxz-kp-Ork"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-nX-ZM9">
+                                <rect key="frame" x="20" y="597" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="cI8-Tw-Dyo"/>
+                                    <constraint firstAttribute="height" constant="50" id="pQE-BA-FGT"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="10" height="10"/>
+                                <state key="normal" image="search_icon">
+                                    <color key="titleColor" red="0.8027279598" green="0.81067576139999997" blue="0.81067576139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchButtonPress:" destination="uA5-9z-HfR" eventType="touchUpInside" id="IHW-gN-LD3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0lh-aO-2PS" secondAttribute="trailing" constant="20" id="ByK-LR-tPD"/>
+                            <constraint firstItem="EyK-ad-hcb" firstAttribute="top" secondItem="Nic-nX-ZM9" secondAttribute="bottom" constant="20" id="CPi-Lb-MDg"/>
+                            <constraint firstItem="EyK-ad-hcb" firstAttribute="top" secondItem="0lh-aO-2PS" secondAttribute="bottom" constant="20" id="Jct-OR-w9B"/>
                             <constraint firstItem="WIn-7l-9Hi" firstAttribute="leading" secondItem="2Wa-Qe-cHa" secondAttribute="leading" id="Niq-UE-NFv"/>
                             <constraint firstAttribute="trailing" secondItem="WIn-7l-9Hi" secondAttribute="trailing" id="V4O-2I-ZTb"/>
+                            <constraint firstItem="Nic-nX-ZM9" firstAttribute="leading" secondItem="2Wa-Qe-cHa" secondAttribute="leading" constant="20" id="XMZ-KK-X7N"/>
                             <constraint firstItem="EyK-ad-hcb" firstAttribute="top" secondItem="WIn-7l-9Hi" secondAttribute="bottom" id="aDd-wg-hSG"/>
                             <constraint firstItem="WIn-7l-9Hi" firstAttribute="top" secondItem="5QC-JA-eEl" secondAttribute="bottom" id="zbk-Ef-ggY"/>
                         </constraints>
@@ -36,6 +82,8 @@
                     <navigationItem key="navigationItem" title="Safety Assistant" id="p0M-l7-tTq"/>
                     <connections>
                         <outlet property="mapView" destination="WIn-7l-9Hi" id="TQh-8b-MCu"/>
+                        <outlet property="searchButton" destination="Nic-nX-ZM9" id="YOo-hd-TlQ"/>
+                        <outlet property="zoomButton" destination="0lh-aO-2PS" id="9Nc-Ly-DrU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha4-sK-w25" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,5 +301,7 @@
     <resources>
         <image name="camera" width="2400" height="2400"/>
         <image name="logo" width="1400" height="1400"/>
+        <image name="search_icon" width="27" height="28"/>
+        <image name="zoom_icon" width="34" height="34"/>
     </resources>
 </document>
