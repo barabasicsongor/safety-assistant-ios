@@ -27,7 +27,7 @@ class MapViewController: UIViewController {
 	var nhoods: [Neighbourhood] = []
 	var polygons: [MKPolygon] = []
 	var sanFrancisco = CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351)
-	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.2, 0.2))
+	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.15, 0.15))
 	
 	let locationManager = CLLocationManager()
 	var selectedPin: MKPlacemark? = nil
@@ -162,6 +162,11 @@ class MapViewController: UIViewController {
 		self.mapView.addGestureRecognizer(tap)
 		
 		self.mapView.isHidden = false
+		self.mapView.isScrollEnabled = false
+		self.mapView.isRotateEnabled = false
+		
+		print(self.mapView.camera.altitude)
+		
 		KRProgressHUD.dismiss()
 	}
 	
@@ -305,6 +310,21 @@ extension MapViewController: MKMapViewDelegate {
 		button.addTarget(self, action: #selector(MapViewController.getDangerLevel), for: .touchUpInside)
 		pinView?.leftCalloutAccessoryView = button
 		return pinView
+	}
+	
+	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+		
+		if mapView.camera.altitude <= 5000.0 {
+			self.mapView.isScrollEnabled = true
+			self.mapView.isRotateEnabled = true
+		} else {
+			self.mapView.isScrollEnabled = false
+			self.mapView.isRotateEnabled = false
+			
+			if mapView.camera.altitude > 42000.0 {
+				self.mapView.setRegion(sanFranciscoRegion, animated: true)
+			}
+		}
 	}
 	
 }
