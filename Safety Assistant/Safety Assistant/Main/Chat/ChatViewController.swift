@@ -25,6 +25,7 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 	var textModeSwitchingCompletion: AWSTaskCompletionSource<NSString>?
 	var clientImage: JSQMessagesAvatarImage?
 	var serverImage: JSQMessagesAvatarImage?
+	var helpVC: HelpViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -70,16 +71,13 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		self.inputToolbar.contentView?.leftBarButtonItem = nil
 		
 		self.navigationController?.navigationBar.isTranslucent = false
-	}
-	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(true)
-		self.showTypingIndicator = true
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [weak self] in
-			self?.messages?.append(JSQMessage(senderId: ServerSenderId, senderDisplayName: (self?.senderDisplayName())!, date: Date(), text: "Hello " + (self?.senderDisplayName())! + "! How can I help you?"))
-			self?.collectionView?.reloadData()
-			self?.showTypingIndicator = false
-		})
+		
+		if UserDefaults.standard.bool(forKey: "help") {
+			showGreeting()
+		} else {
+			UserDefaults.standard.set(true, forKey: "help")
+			showHelp()
+		}
 	}
 	
 	// ACTIONS
@@ -101,6 +99,15 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		self.navigationItem.setLeftBarButton(item, animated: true)
 	}
 	
+	func showGreeting() {
+		self.showTypingIndicator = true
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
+			self?.messages?.append(JSQMessage(senderId: ServerSenderId, senderDisplayName: (self?.senderDisplayName())!, date: Date(), text: "Hello " + (self?.senderDisplayName())! + "! How can I help you?"))
+			self?.collectionView?.reloadData()
+			self?.showTypingIndicator = false
+		})
+	}
+	
 	func getUserImage() -> UIImage {
 		let filename = getDocumentsDirectory().appendingPathComponent("profile_pic.png")
 		return UIImage(contentsOfFile: filename.path)!
@@ -110,6 +117,16 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 		let documentsDirectory = paths[0]
 		return documentsDirectory
+	}
+	
+	func showHelp() {
+		
+		if let _ = helpVC { } else {
+			helpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HelpViewController") as? HelpViewController
+			helpVC!.delegate = self
+		}
+		
+		present(helpVC!, animated: true, completion: nil)
 	}
 	
 	// MARK: - JSQMessagesViewController delegate methods
@@ -123,10 +140,16 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 			self.textModeSwitchingCompletion = nil
 		}
 		else {
-			self.interactionKit?.text(inTextOut: text)
+			
+			if text.lowercased() == "help" {
+				showHelp()
+			} else {
+				self.interactionKit?.text(inTextOut: text)
+				self.showTypingIndicator = true
+			}
+			
 		}
 		self.finishSendingMessage(animated: true)
-		self.showTypingIndicator = true
 	}
 	
 	override func senderDisplayName() -> String {
@@ -229,7 +252,7 @@ extension ChatViewController: AWSLexInteractionDelegate {
 	
 	func interactionKit(_ interactionKit: AWSLexInteractionKit, switchModeInput: AWSLexSwitchModeInput, completionSource: AWSTaskCompletionSource<AWSLexSwitchModeResponse>?) {
 		self.sessionAttributes = switchModeInput.sessionAttributes
-		DispatchQueue.main.async(execute: {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
 			let message: JSQMessage
 			// Handle a successful fulfillment
 			if (switchModeInput.dialogState == AWSLexDialogState.readyForFulfillment) {
@@ -260,5 +283,11 @@ extension ChatViewController: AWSLexInteractionDelegate {
 	*/
 	func interactionKitContinue(withText interactionKit: AWSLexInteractionKit, completionSource: AWSTaskCompletionSource<NSString>) {
 		textModeSwitchingCompletion = completionSource
+	}
+}
+
+extension ChatViewController: HelpViewControllerDelegate {
+	func doneButtonPress() {
+		helpVC!.dismiss(animated: true, completion: nil)
 	}
 }

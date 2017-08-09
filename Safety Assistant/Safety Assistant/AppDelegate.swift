@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		
-		UserDefaults.standard.register(defaults: ["registered": false])
+		UserDefaults.standard.register(defaults: ["registered": false, "help": false])
 		
 		return AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
 	}

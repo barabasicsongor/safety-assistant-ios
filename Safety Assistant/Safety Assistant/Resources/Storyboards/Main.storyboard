@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -296,6 +297,138 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsG-No-baW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1081" y="869"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="d5P-sy-EZx">
+            <objects>
+                <viewController storyboardIdentifier="HelpViewController" id="4Yc-AA-RdA" customClass="HelpViewController" customModule="Safety_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VeM-4s-aZ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="SMB-pu-800"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wsS-PU-2ui">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some things you can ask me:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcS-ts-74n">
+                                <rect key="frame" x="51" y="94" width="273" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="TNU-Sy-aSH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it safe on Friday at Market St" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOy-uw-x2i">
+                                <rect key="frame" x="51" y="189" width="273" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="EY1-sL-QAL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it dangerous Friday on Market St" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbA-m5-LcG">
+                                <rect key="frame" x="51" y="244" width="273" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="iII-Lr-APc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it secure tomorrow on Market St" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9l3-3d-LJo">
+                                <rect key="frame" x="51" y="299" width="273" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="wsI-21-6LS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it frightening Friday at (ZIP)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8N-rz-DeM">
+                                <rect key="frame" x="51" y="354" width="273" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="yPA-a3-N5J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it safe on 4th of July at (ZIP)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-ze-h3o">
+                                <rect key="frame" x="51" y="409" width="273" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="clI-BQ-9gh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-eS-cIa">
+                                <rect key="frame" x="166" y="468" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it safe on 5th of January at Market St" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfF-5s-izv">
+                                <rect key="frame" x="51" y="464" width="273" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="qJd-rK-KJF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFS-q3-0Tf">
+                                <rect key="frame" x="163" y="611" width="48" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPress:" destination="4Yc-AA-RdA" eventType="touchUpInside" id="f6I-Vf-oiv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CbA-m5-LcG" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="0Sd-0H-xYZ"/>
+                            <constraint firstItem="CbA-m5-LcG" firstAttribute="top" secondItem="FOy-uw-x2i" secondAttribute="bottom" constant="20" id="2gu-T2-88D"/>
+                            <constraint firstItem="NwG-ze-h3o" firstAttribute="top" secondItem="W8N-rz-DeM" secondAttribute="bottom" constant="20" id="3lE-bg-4Db"/>
+                            <constraint firstItem="QfF-5s-izv" firstAttribute="leading" secondItem="wsS-PU-2ui" secondAttribute="leadingMargin" constant="35" id="6Hd-AV-Ule"/>
+                            <constraint firstItem="9l3-3d-LJo" firstAttribute="leading" secondItem="wsS-PU-2ui" secondAttribute="leadingMargin" constant="35" id="7bI-8x-cmj"/>
+                            <constraint firstItem="NwG-ze-h3o" firstAttribute="leading" secondItem="wsS-PU-2ui" secondAttribute="leadingMargin" constant="35" id="7gp-mP-2iX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QfF-5s-izv" secondAttribute="trailing" constant="35" id="7xY-e5-G8z"/>
+                            <constraint firstItem="NwG-ze-h3o" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="9xp-Oa-Cnc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CbA-m5-LcG" secondAttribute="trailing" constant="35" id="CUY-8l-dGn"/>
+                            <constraint firstItem="QfF-5s-izv" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="Dqh-94-Krj"/>
+                            <constraint firstItem="XcS-ts-74n" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="EJN-bD-86d"/>
+                            <constraint firstItem="FOy-uw-x2i" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="FWH-jx-ljg"/>
+                            <constraint firstItem="XcS-ts-74n" firstAttribute="top" secondItem="VeM-4s-aZ8" secondAttribute="bottom" constant="74" id="J3E-8s-5kw"/>
+                            <constraint firstItem="9l3-3d-LJo" firstAttribute="top" secondItem="CbA-m5-LcG" secondAttribute="bottom" constant="20" id="LcJ-G3-n0H"/>
+                            <constraint firstItem="XcS-ts-74n" firstAttribute="leading" secondItem="wsS-PU-2ui" secondAttribute="leadingMargin" constant="35" id="Oko-3j-kbd"/>
+                            <constraint firstItem="BFS-q3-0Tf" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="RDB-W4-KpV"/>
+                            <constraint firstItem="W8N-rz-DeM" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="TtR-ow-AMy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FOy-uw-x2i" secondAttribute="trailing" constant="35" id="U9D-H6-64e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9l3-3d-LJo" secondAttribute="trailing" constant="35" id="Ull-hg-TDl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NwG-ze-h3o" secondAttribute="trailing" constant="35" id="YlE-FP-uPA"/>
+                            <constraint firstItem="W8N-rz-DeM" firstAttribute="top" secondItem="9l3-3d-LJo" secondAttribute="bottom" constant="20" id="adZ-jx-qw1"/>
+                            <constraint firstItem="FOy-uw-x2i" firstAttribute="leading" secondItem="wsS-PU-2ui" secondAttribute="leadingMargin" constant="35" id="dq4-1O-KQz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W8N-rz-DeM" secondAttribute="trailing" constant="35" id="gpR-Ah-57r"/>
+                            <constraint firstItem="9l3-3d-LJo" firstAttribute="centerX" secondItem="wsS-PU-2ui" secondAttribute="centerX" id="i8t-fi-YRs"/>
+                            <constraint firstItem="W8N-rz-DeM" firstAttribute="leading" secondItem="wsS-PU-2ui" secondAttribute="leadingMargin" constant="35" id="iaO-we-QXv"/>
+                            <constraint firstItem="CbA-m5-LcG" firstAttribute="leading" secondItem="wsS-PU-2ui" secondAttribute="leadingMargin" constant="35" id="opV-fc-sfd"/>
+                            <constraint firstItem="SMB-pu-800" firstAttribute="top" secondItem="BFS-q3-0Tf" secondAttribute="bottom" constant="20" id="rh1-co-y8x"/>
+                            <constraint firstItem="FOy-uw-x2i" firstAttribute="top" secondItem="XcS-ts-74n" secondAttribute="bottom" constant="30" id="s5p-li-vvH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XcS-ts-74n" secondAttribute="trailing" constant="35" id="wKm-1n-rRZ"/>
+                            <constraint firstItem="QfF-5s-izv" firstAttribute="top" secondItem="NwG-ze-h3o" secondAttribute="bottom" constant="20" id="zxC-B1-wmT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGY-kv-b9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045.5999999999999" y="868.51574212893559"/>
         </scene>
     </scenes>
     <resources>
