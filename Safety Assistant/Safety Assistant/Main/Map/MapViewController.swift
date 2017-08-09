@@ -27,6 +27,7 @@ class MapViewController: UIViewController {
 	var nhoods: [Neighbourhood] = []
 	var polygons: [MKPolygon] = []
 	var sanFrancisco = CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351)
+	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.2, 0.2))
 	
 	let locationManager = CLLocationManager()
 	var selectedPin: MKPlacemark? = nil
@@ -118,7 +119,25 @@ class MapViewController: UIViewController {
 	}
 	
 	@IBAction func userLocationZoomButtonPress(_ sender: Any) {
-		self.mapView.setCenter(self.mapView.userLocation.coordinate, animated: true)
+		
+		let mapPoint: MKMapPoint = MKMapPointForCoordinate(self.mapView.userLocation.coordinate)
+		var found = false
+		
+		for polygon in polygons {
+			let polygonRenderer = MKPolygonRenderer(polygon: polygon)
+			let polygonViewPoint: CGPoint = polygonRenderer.point(for: mapPoint)
+			
+			if polygonRenderer.path.contains(polygonViewPoint) {
+				self.mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude), span: MKCoordinateSpanMake(0.05, 0.05)), animated: true)
+				found = true
+				break
+			}
+		}
+		
+		if !found {
+			alert(title: "Sorry", message: "We don't support your current location.")
+		}
+		
 	}
 	
 	@IBAction func searchButtonPress(_ sender: Any) {
@@ -135,9 +154,7 @@ class MapViewController: UIViewController {
 	
 	func loadMap() {
 		self.mapView.delegate = self
-		let span = MKCoordinateSpanMake(0.2, 0.2)
-		let region = MKCoordinateRegion(center: sanFrancisco, span: span)
-		self.mapView.setRegion(region, animated: true)
+		self.mapView.setRegion(sanFranciscoRegion, animated: true)
 		
 		self.addPolygons()
 		
