@@ -66,7 +66,7 @@ class MapViewController: UIViewController {
 		self.locationManager.requestWhenInUseAuthorization()
 		self.locationManager.requestLocation()
 		
-		MapService(url: "http://barabasicsongor.com/heatmap.json").makeRequest(completion: { [weak self] result in
+		MapService(url: "http://safetyassistant.us-east-1.elasticbeanstalk.com/heatmap").makeRequest(completion: { [weak self] result in
 			self?.nhoods = result
 			self?.loadMap()
 		})
