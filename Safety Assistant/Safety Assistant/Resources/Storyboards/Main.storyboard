@@ -110,6 +110,42 @@
             </objects>
             <point key="canvasLocation" x="2046" y="154"/>
         </scene>
+        <!--Voice View Controller-->
+        <scene sceneID="I8K-G1-QIu">
+            <objects>
+                <viewController storyboardIdentifier="VoiceViewController" id="7lx-2Q-ZEb" customClass="VoiceViewController" customModule="Safety_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MLd-h6-RqG"/>
+                        <viewControllerLayoutGuide type="bottom" id="bEE-Ys-TUa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lER-X9-TeP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9d-ZX-edP" customClass="AWSLexVoiceButton">
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="DEJ-DV-H15"/>
+                                    <constraint firstAttribute="width" constant="150" id="y0F-Z8-khJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S9d-ZX-edP" firstAttribute="centerY" secondItem="lER-X9-TeP" secondAttribute="centerY" id="HSj-D2-XSP"/>
+                            <constraint firstItem="S9d-ZX-edP" firstAttribute="centerX" secondItem="lER-X9-TeP" secondAttribute="centerX" id="mF9-UJ-X8N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="voiceButton" destination="S9d-ZX-edP" id="LT0-dO-wZk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nS9-2a-j6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2929" y="154"/>
+        </scene>
         <!--Launch View Controller-->
         <scene sceneID="7fH-GA-jif">
             <objects>

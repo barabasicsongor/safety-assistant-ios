@@ -42,6 +42,7 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		
 		// register the interaction kit client
 		AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: botConfig, forKey: SafetyAssistantBotBotName)
+		AWSLexInteractionKit.register(with: configuration!, interactionKitConfiguration: botConfig, forKey: AWSLexVoiceButtonKey)
 		// fetch and set the interaction kit client
 		self.interactionKit = AWSLexInteractionKit.init(forKey: SafetyAssistantBotBotName)
 		// set the interaction kit delegate
@@ -86,6 +87,11 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		self.navigationController?.popViewController(animated: true)
 	}
 	
+	func micButtonPress() {
+		let voiceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VoiceViewController") as! VoiceViewController
+		self.navigationController?.pushViewController(voiceVC, animated: true)
+	}
+	
 	// HELPER FUNCTIONS
 	func configureNavbar() {
 		self.navigationItem.hidesBackButton = true
@@ -97,6 +103,14 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		btn.addTarget(self, action: #selector(ChatViewController.backButtonPress), for: .touchUpInside)
 		let item = UIBarButtonItem(customView: btn)
 		self.navigationItem.setLeftBarButton(item, animated: true)
+		
+		let btn1 = UIButton(type: .custom)
+		btn1.setImage(UIImage(named: "mic"), for: .normal)
+		btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+		btn1.addTarget(self, action: #selector(ChatViewController.micButtonPress), for: .touchUpInside)
+		let item1 = UIBarButtonItem(customView: btn1)
+		self.navigationItem.setRightBarButton(item1, animated: true)
+		
 	}
 	
 	func showGreeting() {
@@ -284,6 +298,7 @@ extension ChatViewController: AWSLexInteractionDelegate {
 	func interactionKitContinue(withText interactionKit: AWSLexInteractionKit, completionSource: AWSTaskCompletionSource<NSString>) {
 		textModeSwitchingCompletion = completionSource
 	}
+	
 }
 
 extension ChatViewController: HelpViewControllerDelegate {

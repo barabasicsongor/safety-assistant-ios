@@ -121,20 +121,12 @@ class MapViewController: UIViewController {
 	@IBAction func userLocationZoomButtonPress(_ sender: Any) {
 		
 		let mapPoint: MKMapPoint = MKMapPointForCoordinate(self.mapView.userLocation.coordinate)
-		var found = false
 		
-		for polygon in polygons {
-			let polygonRenderer = MKPolygonRenderer(polygon: polygon)
-			let polygonViewPoint: CGPoint = polygonRenderer.point(for: mapPoint)
-			
-			if polygonRenderer.path.contains(polygonViewPoint) {
-				self.mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude), span: MKCoordinateSpanMake(0.05, 0.05)), animated: true)
-				found = true
-				break
-			}
-		}
+		let found = isPointInPolygons(point: mapPoint)
 		
-		if !found {
+		if found {
+			self.mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude), span: MKCoordinateSpanMake(0.05, 0.05)), animated: true)
+		} else {
 			alert(title: "Sorry", message: "We don't support your current location.")
 		}
 		
@@ -162,10 +154,6 @@ class MapViewController: UIViewController {
 		self.mapView.addGestureRecognizer(tap)
 		
 		self.mapView.isHidden = false
-		self.mapView.isScrollEnabled = false
-		self.mapView.isRotateEnabled = false
-		
-		print(self.mapView.camera.altitude)
 		
 		KRProgressHUD.dismiss()
 	}
@@ -176,7 +164,7 @@ class MapViewController: UIViewController {
 			
 			var points: [CLLocationCoordinate2D] = []
 			
-			for var i in stride(from: 0, to: hood.polygon.count-1, by: 2) {
+			for i in stride(from: 0, to: hood.polygon.count-1, by: 2) {
 				points.append(CLLocationCoordinate2DMake(hood.polygon[i], hood.polygon[i+1]))
 			}
 			
@@ -187,6 +175,18 @@ class MapViewController: UIViewController {
 		}
 		
 		self.mapView.addOverlays(polygons)
+	}
+	
+	func isPointInPolygons(point: MKMapPoint) -> Bool {
+		for polygon in polygons {
+			let polygonRenderer = MKPolygonRenderer(polygon: polygon)
+			let polygonViewPoint: CGPoint = polygonRenderer.point(for: point)
+			
+			if polygonRenderer.path.contains(polygonViewPoint) {
+				return true
+			}
+		}
+		return false
 	}
 	
 	// HELPER FUNCTIONS
@@ -200,6 +200,7 @@ class MapViewController: UIViewController {
 		if isSearchFieldHidden {
 			isSearchFieldHidden = false
 			self.navigationItem.rightBarButtonItem = nil
+			self.navigationItem.leftBarButtonItem = nil
 			self.searchButton.isHidden = true
 			self.zoomButton.isHidden = true
 			self.navigationItem.titleView = self.searchBar
@@ -207,6 +208,7 @@ class MapViewController: UIViewController {
 		} else {
 			isSearchFieldHidden = true
 			self.navigationItem.rightBarButtonItem = self.rightBarButton
+			self.navigationItem.leftBarButtonItem = self.leftBarButton
 			self.searchButton.isHidden = false
 			self.zoomButton.isHidden = false
 			self.navigationItem.titleView = nil
@@ -285,9 +287,12 @@ extension MapViewController: MKMapViewDelegate {
 				}
 			}
 			
-			renderer.fillColor = UIColor(hex: nhoods[ind].color).withAlphaComponent(0.5)
-			renderer.strokeColor = UIColor.black.withAlphaComponent(0.7)
-			renderer.lineWidth = 0.5
+			renderer.fillColor = UIColor(hex: nhoods[ind].color).withAlphaComponent(0.6)
+			renderer.strokeColor = UIColor(hex: nhoods[ind].color).withAlphaComponent(0.1)
+			renderer.lineWidth = 8.0
+			renderer.lineJoin = .round
+			renderer.lineCap = .round
+			
 			return renderer
 		}
 		
@@ -314,17 +319,13 @@ extension MapViewController: MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		
-		if mapView.camera.altitude <= 5000.0 {
-			self.mapView.isScrollEnabled = true
-			self.mapView.isRotateEnabled = true
-		} else {
-			self.mapView.isScrollEnabled = false
-			self.mapView.isRotateEnabled = false
-			
-			if mapView.camera.altitude > 42000.0 {
-				self.mapView.setRegion(sanFranciscoRegion, animated: true)
-			}
+		let mapPoint: MKMapPoint = MKMapPointForCoordinate(self.mapView.centerCoordinate)
+		let found = isPointInPolygons(point: mapPoint)
+		
+		if !found {
+			self.mapView.setCenter(sanFrancisco, animated: true)
 		}
+		
 	}
 	
 }

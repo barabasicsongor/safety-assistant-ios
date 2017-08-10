@@ -28,7 +28,7 @@ struct APIService {
 					completion(self.getStringFromResult(result: value!))
 				}
 			case .failure(let error):
-				print("Error %@", error)
+				print("Error \(error)")
 				completion("Sorry. Something went wrong.")
 			}
 		}
@@ -40,13 +40,11 @@ struct APIService {
 		if result == -1 {
 			result_str = "I could not find any relevant data about the location."
 		} else if result >= 0 && result < 0.15 {
-			result_str = "All I can say is have fun buddy, enjoy your time while you're there!"
+			result_str = "It is safe."
 		} else if result >= 0.15 && result < 0.4 {
-			result_str = "The area you are going to is not that dangerous, but still be careful!"
-		} else if result >= 0.4 && result < 0.7 {
-			result_str = "The area you are going to is unsafe. Try not to be too adventurous!"
+			result_str = "It is relatively OK, but be careful!"
 		} else {
-			result_str = "The area you are going to is extremely dangerous. Be careful, and don't go there on your own!"
+			result_str = "It is NOT safe!"
 		}
 		
 		return result_str
