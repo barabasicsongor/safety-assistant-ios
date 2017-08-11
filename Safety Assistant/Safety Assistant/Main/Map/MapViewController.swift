@@ -320,10 +320,14 @@ extension MapViewController: MKMapViewDelegate {
 	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		
 		let mapPoint: MKMapPoint = MKMapPointForCoordinate(self.mapView.centerCoordinate)
-		let found = isPointInPolygons(point: mapPoint)
+		var found = isPointInPolygons(point: mapPoint)
+		
+		if found {
+			found = (mapView.region.span.latitudeDelta < sanFranciscoRegion.span.latitudeDelta || mapView.region.span.longitudeDelta < sanFranciscoRegion.span.longitudeDelta)
+		}
 		
 		if !found {
-			self.mapView.setCenter(sanFrancisco, animated: true)
+			mapView.setRegion(sanFranciscoRegion, animated: true)
 		}
 		
 	}
