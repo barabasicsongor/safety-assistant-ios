@@ -42,7 +42,7 @@ class VoiceViewController: UIViewController {
 		
 	}
 	
-	func backButtonPress() {
+	@objc func backButtonPress() {
 		self.navigationController?.popViewController(animated: true)
 	}
 

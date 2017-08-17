@@ -86,8 +86,6 @@ extension LocationSearchTableViewController: UISearchResultsUpdating {
 					if city == "San Francisco" {
 						newItems.append(x)
 					}
-				} else {
-					newItems.append(x)
 				}
 			}
 			

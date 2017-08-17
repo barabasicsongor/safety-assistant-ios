@@ -10,6 +10,7 @@ import Foundation
 import JSQMessagesViewController
 import AWSLex
 import AWSMobileHubHelper
+import KRProgressHUD
 
 let ClientSenderId = UserDefaults.standard.string(forKey: "name")
 let ServerSenderId = "Server"
@@ -72,22 +73,16 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		self.inputToolbar.contentView?.leftBarButtonItem = nil
 		
 		self.navigationController?.navigationBar.isTranslucent = false
-		
-		if UserDefaults.standard.bool(forKey: "help") {
-			showGreeting()
-		} else {
-			UserDefaults.standard.set(true, forKey: "help")
-			showHelp()
-		}
+		showGreeting()
 	}
 	
 	// ACTIONS
 	
-	func backButtonPress() {
+	@objc func backButtonPress() {
 		self.navigationController?.popViewController(animated: true)
 	}
 	
-	func micButtonPress() {
+	@objc func micButtonPress() {
 		let voiceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VoiceViewController") as! VoiceViewController
 		self.navigationController?.pushViewController(voiceVC, animated: true)
 	}
@@ -108,8 +103,8 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		btn1.setImage(UIImage(named: "mic"), for: .normal)
 		btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
 		btn1.addTarget(self, action: #selector(ChatViewController.micButtonPress), for: .touchUpInside)
-		let item1 = UIBarButtonItem(customView: btn1)
-		self.navigationItem.setRightBarButton(item1, animated: true)
+//		let item1 = UIBarButtonItem(customView: btn1)
+//		self.navigationItem.setRightBarButton(item1, animated: true)
 		
 	}
 	
@@ -118,8 +113,15 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesComposerTextView
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [weak self] in
 			self?.messages?.append(JSQMessage(senderId: ServerSenderId, senderDisplayName: (self?.senderDisplayName())!, date: Date(), text: "Hello " + (self?.senderDisplayName())! + "! How can I help you?"))
 			self?.collectionView?.reloadData()
-			self?.showTypingIndicator = false
+			
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [weak self] in
+				self?.messages?.append(JSQMessage(senderId: ServerSenderId, senderDisplayName: (self?.senderDisplayName())!, date: Date(), text: "Type 'help' for usage instructions"))
+				self?.collectionView?.reloadData()
+				self?.showTypingIndicator = false
+			})
+			
 		})
+		
 	}
 	
 	func getUserImage() -> UIImage {
@@ -266,7 +268,12 @@ extension ChatViewController: AWSLexInteractionDelegate {
 	
 	func interactionKit(_ interactionKit: AWSLexInteractionKit, switchModeInput: AWSLexSwitchModeInput, completionSource: AWSTaskCompletionSource<AWSLexSwitchModeResponse>?) {
 		self.sessionAttributes = switchModeInput.sessionAttributes
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+		var length: Double = 0.0
+		if let str = switchModeInput.outputText {
+			length = length + Double(str.characters.count) * 0.15
+		}
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(Int(length)), execute: {
 			let message: JSQMessage
 			// Handle a successful fulfillment
 			if (switchModeInput.dialogState == AWSLexDialogState.readyForFulfillment) {

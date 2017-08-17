@@ -31,21 +31,23 @@ class MapViewController: UIViewController {
 	
 	let locationManager = CLLocationManager()
 	var selectedPin: MKPlacemark? = nil
+	var isCustomPin = true
 	
 	var resultSearchController: UISearchController? = nil
 	var searchBar: UISearchBar!
 	
 	var isSearchFieldHidden = true
+	var polygonCounter = 0
 	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		LocationService.sharedInstance.startUpdatingLocation()
 		
-		KRProgressHUD.show()
+		self.zoomButton.isHidden = true
 		
 		setupNavBar()
-		
-		self.mapView.isHidden = true
+		loadMap()
 		
 		let locationSearchTable = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LocationSearchTableViewController") as? LocationSearchTableViewController
 		locationSearchTable?.mapView = self.mapView
@@ -61,15 +63,15 @@ class MapViewController: UIViewController {
 		searchBar.sizeToFit()
 		searchBar.placeholder = "Search for places"
 		
-		self.locationManager.delegate = self
-		self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-		self.locationManager.requestWhenInUseAuthorization()
-		self.locationManager.requestLocation()
+		KRProgressHUD.show()
 		
-		MapService(url: "http://safetyassistant.us-east-1.elasticbeanstalk.com/heatmap").makeRequest(completion: { [weak self] result in
-			self?.nhoods = result
-			self?.loadMap()
-		})
+		DispatchQueue.global().async {
+			
+			MapService(url: "http://safetyassistant.us-east-1.elasticbeanstalk.com/heatmap").makeRequest(completion: { [weak self] result in
+				self?.nhoods = result
+				self?.addPolygons()
+			})
+		}
 		
     }
 	
@@ -95,7 +97,7 @@ class MapViewController: UIViewController {
 	
 	// ACTIONS
 	
-	func chatButtonPress() {
+	@objc func chatButtonPress() {
 		KRProgressHUD.show()
 		let chatViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
 		
@@ -103,7 +105,7 @@ class MapViewController: UIViewController {
 		KRProgressHUD.dismiss()
 	}
 	
-	func mapInfoButtonPress() {
+	@objc func mapInfoButtonPress() {
 		let alert = UIAlertController(title: "Map", message: "Choose a map type", preferredStyle: .actionSheet)
 		alert.addAction(UIAlertAction(title: "Hybrid", style: .default, handler: { [weak self] alrt in
 			self?.mapView.mapType = .hybrid
@@ -113,6 +115,10 @@ class MapViewController: UIViewController {
 		}))
 		alert.addAction(UIAlertAction(title: "Standard", style: .default, handler: { [weak self] alrt in
 			self?.mapView.mapType = .standard
+		}))
+		alert.addAction(UIAlertAction(title: "ARMap", style: .default, handler: { [weak self] _ in
+			let arVC = self?.storyboard?.instantiateViewController(withIdentifier: "ARMapViewController") as! ARMapViewController
+			self?.navigationController?.pushViewController(arVC, animated: true)
 		}))
 		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 		present(alert, animated: true, completion: nil)
@@ -136,9 +142,29 @@ class MapViewController: UIViewController {
 		changeSearchFieldState()
 	}
 	
-	func mapViewTapGestureRecognizerTap() {
+	@objc func mapViewTapGestureRecognizerTap(_ gesture: UITapGestureRecognizer) {
 		if isSearchFieldHidden == false {
 			changeSearchFieldState()
+		} else {
+			let point = gesture.location(in: self.mapView)
+			let coordinate = self.mapView.convert(point, toCoordinateFrom: nil)
+			let mappoint = MKMapPointForCoordinate(coordinate)
+			let ind = pointInPolygonIndex(point: mappoint)
+			
+			if ind >= 0 {
+				mapView.removeAnnotations(mapView.annotations)
+				isCustomPin = false
+				
+				let annotation = MKPointAnnotation()
+				annotation.coordinate = polygons[ind].coordinate
+			
+				annotation.title = "Total number of crimes in \(nhoods[ind].name): \(nhoods[ind].totalCrimes)"
+				
+				mapView.addAnnotation(annotation)
+				let span = MKCoordinateSpanMake(0.05, 0.05)
+				let region = MKCoordinateRegionMake(polygons[ind].coordinate, span)
+				mapView.setRegion(region, animated: true)
+			}
 		}
 	}
 	
@@ -148,14 +174,8 @@ class MapViewController: UIViewController {
 		self.mapView.delegate = self
 		self.mapView.setRegion(sanFranciscoRegion, animated: true)
 		
-		self.addPolygons()
-		
 		let tap = UITapGestureRecognizer(target: self, action: #selector(MapViewController.mapViewTapGestureRecognizerTap))
 		self.mapView.addGestureRecognizer(tap)
-		
-		self.mapView.isHidden = false
-		
-		KRProgressHUD.dismiss()
 	}
 	
 	func addPolygons() {
@@ -189,6 +209,18 @@ class MapViewController: UIViewController {
 		return false
 	}
 	
+	func pointInPolygonIndex(point: MKMapPoint) -> Int {
+		for i in 0..<polygons.count {
+			let polygonRenderer = MKPolygonRenderer(polygon: polygons[i])
+			let polygonViewPoint: CGPoint = polygonRenderer.point(for: point)
+			
+			if polygonRenderer.path.contains(polygonViewPoint) {
+				return i
+			}
+		}
+		return -1
+	}
+	
 	// HELPER FUNCTIONS
 	
 	func changeSearchFieldState() {
@@ -202,7 +234,7 @@ class MapViewController: UIViewController {
 			self.navigationItem.rightBarButtonItem = nil
 			self.navigationItem.leftBarButtonItem = nil
 			self.searchButton.isHidden = true
-			self.zoomButton.isHidden = true
+//			self.zoomButton.isHidden = true
 			self.navigationItem.titleView = self.searchBar
 			self.searchBar.becomeFirstResponder()
 		} else {
@@ -210,7 +242,7 @@ class MapViewController: UIViewController {
 			self.navigationItem.rightBarButtonItem = self.rightBarButton
 			self.navigationItem.leftBarButtonItem = self.leftBarButton
 			self.searchButton.isHidden = false
-			self.zoomButton.isHidden = false
+//			self.zoomButton.isHidden = false
 			self.navigationItem.titleView = nil
 		}
 	}
@@ -239,7 +271,7 @@ class MapViewController: UIViewController {
 		return addressLine
 	}
 	
-	func getDangerLevel() {
+	@objc func getDangerLevel() {
 		KRProgressHUD.show()
 		
 		self.mapView.removeAnnotations(self.mapView.annotations)
@@ -267,6 +299,7 @@ class MapViewController: UIViewController {
 			alertVC,
 			animated: true,
 			completion: nil)
+		
 	}
 
 }
@@ -275,6 +308,7 @@ extension MapViewController: MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
 		if overlay is MKPolygon {
+			
 			let renderer = MKPolygonRenderer(polygon: overlay as! MKPolygon)
 			let title = renderer.polygon.title!
 			
@@ -293,6 +327,11 @@ extension MapViewController: MKMapViewDelegate {
 			renderer.lineJoin = .round
 			renderer.lineCap = .round
 			
+			polygonCounter += 1
+			if polygonCounter == polygons.count {
+				KRProgressHUD.dismiss()
+			}
+			
 			return renderer
 		}
 		
@@ -309,11 +348,16 @@ extension MapViewController: MKMapViewDelegate {
 		pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
 		pinView?.pinTintColor = UIColor.orange
 		pinView?.canShowCallout = true
-		let smallSquare = CGSize(width: 30, height: 30)
-		let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-		button.setBackgroundImage(UIImage(named: "robot_avatar"), for: .normal)
-		button.addTarget(self, action: #selector(MapViewController.getDangerLevel), for: .touchUpInside)
-		pinView?.leftCalloutAccessoryView = button
+		
+		
+		if isCustomPin {
+			let smallSquare = CGSize(width: 30, height: 30)
+			let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+			button.setBackgroundImage(UIImage(named: "robot_avatar"), for: .normal)
+			button.addTarget(self, action: #selector(MapViewController.getDangerLevel), for: .touchUpInside)
+			pinView?.leftCalloutAccessoryView = button
+		}
+		
 		return pinView
 	}
 	
@@ -323,7 +367,7 @@ extension MapViewController: MKMapViewDelegate {
 		var found = isPointInPolygons(point: mapPoint)
 		
 		if found {
-			found = (mapView.region.span.latitudeDelta < sanFranciscoRegion.span.latitudeDelta || mapView.region.span.longitudeDelta < sanFranciscoRegion.span.longitudeDelta)
+			found = (mapView.region.span.latitudeDelta < (sanFranciscoRegion.span.latitudeDelta + 0.8) || mapView.region.span.longitudeDelta < (sanFranciscoRegion.span.longitudeDelta + 0.8))
 		}
 		
 		if !found {
@@ -334,34 +378,10 @@ extension MapViewController: MKMapViewDelegate {
 	
 }
 
-extension MapViewController: CLLocationManagerDelegate {
-	
-	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		if status == .authorizedWhenInUse {
-			locationManager.requestLocation()
-		}
-	}
-	
-	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		// Updated location
-
-//		Zoom to users current location
-//		if let location = locations.first {
-//			let span = MKCoordinateSpanMake(0.05, 0.05)
-//			let region = MKCoordinateRegion(center: location.coordinate, span: span)
-//			mapView.setRegion(region, animated: true)
-//		}
-	}
-	
-	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-		print("Error with location manager")
-	}
-	
-}
-
 extension MapViewController: HandleMapSearch {
 	func dropPinZoom(placemark: MKPlacemark) {
 		self.selectedPin = placemark
+		isCustomPin = true
 		mapView.removeAnnotations(mapView.annotations)
 		
 		let annotation = MKPointAnnotation()

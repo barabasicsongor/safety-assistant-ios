@@ -27,12 +27,9 @@
 		5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1BE1F30ABAE00D07BA3 /* AWSConfiguration.swift */; };
 		5752C1C21F30ABAE00D07BA3 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752C1BF1F30ABAE00D07BA3 /* AWSMobileClient.swift */; };
 		5752C1C31F30ABAE00D07BA3 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C01F30ABAE00D07BA3 /* AWSMobileHubHelper.framework */; };
-		5752C1CE1F30ABF400D07BA3 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C61F30ABF400D07BA3 /* AWSCore.framework */; };
-		5752C1CF1F30ABF400D07BA3 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C71F30ABF400D07BA3 /* AWSLex.framework */; };
 		5752C1D01F30ABF400D07BA3 /* Amazon_Software_License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5752C1C91F30ABF400D07BA3 /* Amazon_Software_License.txt */; };
 		5752C1D11F30ABF400D07BA3 /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = 5752C1CA1F30ABF400D07BA3 /* NOTICE */; };
 		5752C1D21F30ABF400D07BA3 /* CheckXcodeVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5752C1CB1F30ABF400D07BA3 /* CheckXcodeVersion.sh */; };
-		5752C1D31F30ABF400D07BA3 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1CD1F30ABF400D07BA3 /* JSQMessagesViewController.framework */; };
 		5752C1D41F30AC3800D07BA3 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C61F30ABF400D07BA3 /* AWSCore.framework */; };
 		5752C1D51F30AC3800D07BA3 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C61F30ABF400D07BA3 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5752C1D61F30AC3800D07BA3 /* AWSLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5752C1C71F30ABF400D07BA3 /* AWSLex.framework */; };
@@ -44,6 +41,11 @@
 		578E54971F3C4DBA003B1DE3 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E54961F3C4DBA003B1DE3 /* VoiceViewController.swift */; };
 		579579821F331CF60078E3A7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579579811F331CF60078E3A7 /* APIService.swift */; };
 		579579841F331D4C0078E3A7 /* Date+WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579579831F331D4C0078E3A7 /* Date+WeekDay.swift */; };
+		57C4222C1F4436E60081A2A5 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57C422291F4436E50081A2A5 /* Scene.sks */; };
+		57C4222D1F4436E60081A2A5 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4222A1F4436E50081A2A5 /* Scene.swift */; };
+		57C4222E1F4436E60081A2A5 /* ARMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4222B1F4436E50081A2A5 /* ARMapViewController.swift */; };
+		57F873AF1F42FBE600CFD013 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F873AE1F42FBE600CFD013 /* art.scnassets */; };
+		57F873B81F4330B700CFD013 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F873B71F4330B700CFD013 /* LocationService.swift */; };
 		7891010F3E7B8D66F47FE3B1 /* Pods_Safety_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */; };
 		D285BA530F6B9F3092067084 /* Pods_Safety_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */; };
 /* End PBXBuildFile section */
@@ -126,6 +128,11 @@
 		578E54961F3C4DBA003B1DE3 /* VoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoiceViewController.swift; path = Main/Chat/VoiceViewController.swift; sourceTree = "<group>"; };
 		579579811F331CF60078E3A7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = Services/APIService.swift; sourceTree = "<group>"; };
 		579579831F331D4C0078E3A7 /* Date+WeekDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+WeekDay.swift"; path = "Common/Extensions/Date+WeekDay.swift"; sourceTree = "<group>"; };
+		57C422291F4436E50081A2A5 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
+		57C4222A1F4436E50081A2A5 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		57C4222B1F4436E50081A2A5 /* ARMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARMapViewController.swift; sourceTree = "<group>"; };
+		57F873AE1F42FBE600CFD013 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		57F873B71F4330B700CFD013 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = Common/LocationService.swift; sourceTree = "<group>"; };
 		8399C2D2F17E033BEA29C89F /* Pods-Safety AssistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A91272CEAD221AC83A3A6D8C /* Pods-Safety Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.release.xcconfig"; sourceTree = "<group>"; };
 		BA2EEE074E9861B2902E7E55 /* Pods-Safety AssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,13 +147,10 @@
 			files = (
 				5752C1D81F30AC3800D07BA3 /* JSQMessagesViewController.framework in Frameworks */,
 				5752C1D61F30AC3800D07BA3 /* AWSLex.framework in Frameworks */,
-				5752C1D31F30ABF400D07BA3 /* JSQMessagesViewController.framework in Frameworks */,
 				5752C1D41F30AC3800D07BA3 /* AWSCore.framework in Frameworks */,
 				570B1D231F2F44E200D74752 /* MapKit.framework in Frameworks */,
-				5752C1CE1F30ABF400D07BA3 /* AWSCore.framework in Frameworks */,
 				D285BA530F6B9F3092067084 /* Pods_Safety_Assistant.framework in Frameworks */,
 				5752C1C31F30ABAE00D07BA3 /* AWSMobileHubHelper.framework in Frameworks */,
-				5752C1CF1F30ABF400D07BA3 /* AWSLex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +237,7 @@
 				570B1CEA1F2F33C800D74752 /* Assets.xcassets */,
 				570B1CEC1F2F33C800D74752 /* LaunchScreen.storyboard */,
 				570B1CEF1F2F33C800D74752 /* Info.plist */,
+				57F873AE1F42FBE600CFD013 /* art.scnassets */,
 			);
 			path = "Safety Assistant";
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 		570B1D111F2F343A00D74752 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				57C422281F4436E50081A2A5 /* ARMap */,
 				57386C931F31F15200135A06 /* Launch */,
 				57386C951F31F15200135A06 /* Register */,
 				5752C1E01F30AD5800D07BA3 /* Chat */,
@@ -313,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				570B1D251F2F5E5000D74752 /* Extensions */,
+				57F873B71F4330B700CFD013 /* LocationService.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -402,6 +409,17 @@
 			name = Chat;
 			sourceTree = "<group>";
 		};
+		57C422281F4436E50081A2A5 /* ARMap */ = {
+			isa = PBXGroup;
+			children = (
+				57C422291F4436E50081A2A5 /* Scene.sks */,
+				57C4222A1F4436E50081A2A5 /* Scene.swift */,
+				57C4222B1F4436E50081A2A5 /* ARMapViewController.swift */,
+			);
+			name = ARMap;
+			path = Main/ARMap;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,23 +493,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Csongor Barabasi";
 				TargetAttributes = {
 					570B1CDF1F2F33C800D74752 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = ZUWW9J8PQJ;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					570B1CF31F2F33C800D74752 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = ZUWW9J8PQJ;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 570B1CDF1F2F33C800D74752;
 					};
 					570B1CFE1F2F33C800D74752 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = ZUWW9J8PQJ;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 570B1CDF1F2F33C800D74752;
 					};
@@ -525,8 +546,10 @@
 				5752C1D11F30ABF400D07BA3 /* NOTICE in Resources */,
 				57386C921F31F10E00135A06 /* Main.storyboard in Resources */,
 				570B1CEE1F2F33C800D74752 /* LaunchScreen.storyboard in Resources */,
+				57F873AF1F42FBE600CFD013 /* art.scnassets in Resources */,
 				570B1CEB1F2F33C800D74752 /* Assets.xcassets in Resources */,
 				5752C1D21F30ABF400D07BA3 /* CheckXcodeVersion.sh in Resources */,
+				57C4222C1F4436E60081A2A5 /* Scene.sks in Resources */,
 				5752C1D01F30ABF400D07BA3 /* Amazon_Software_License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,14 +716,17 @@
 				570B1CE41F2F33C800D74752 /* AppDelegate.swift in Sources */,
 				57386C981F31F15200135A06 /* RegisterViewController.swift in Sources */,
 				57386C971F31F15200135A06 /* LaunchViewController.swift in Sources */,
+				57C4222D1F4436E60081A2A5 /* Scene.swift in Sources */,
 				570B1D211F2F3B5000D74752 /* JSONParser.swift in Sources */,
 				5752C1C21F30ABAE00D07BA3 /* AWSMobileClient.swift in Sources */,
 				570B1D181F2F348400D74752 /* MapViewController.swift in Sources */,
 				5752C1C11F30ABAE00D07BA3 /* AWSConfiguration.swift in Sources */,
 				577E86481F3460400050CB4C /* LocationSearchTableViewController.swift in Sources */,
 				570B1D271F2F5E7800D74752 /* UIColor+Hex.swift in Sources */,
+				57C4222E1F4436E60081A2A5 /* ARMapViewController.swift in Sources */,
 				579579841F331D4C0078E3A7 /* Date+WeekDay.swift in Sources */,
 				578E54971F3C4DBA003B1DE3 /* VoiceViewController.swift in Sources */,
+				57F873B81F4330B700CFD013 /* LocationService.swift in Sources */,
 				570B1D1E1F2F390500D74752 /* MapService.swift in Sources */,
 				57024A701F3B457100093901 /* HelpViewController.swift in Sources */,
 				579579821F331CF60078E3A7 /* APIService.swift in Sources */,
@@ -763,7 +789,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -771,7 +799,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -794,7 +826,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -813,7 +845,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -821,7 +855,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -838,7 +876,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -862,7 +900,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -882,7 +921,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -897,7 +937,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Safety Assistant.app/Safety Assistant";
 			};
 			name = Debug;
@@ -913,7 +954,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Safety Assistant.app/Safety Assistant";
 			};
 			name = Release;
@@ -928,7 +970,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "Safety Assistant";
 			};
 			name = Debug;
@@ -943,7 +986,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "Safety Assistant";
 			};
 			name = Release;

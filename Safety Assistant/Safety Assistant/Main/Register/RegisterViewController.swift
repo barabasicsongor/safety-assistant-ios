@@ -92,11 +92,11 @@ class RegisterViewController: UIViewController {
 		
 	}
 	
-	func backButtonPress() {
+	@objc func backButtonPress() {
 		self.navigationController?.popViewController(animated: true)
 	}
 	
-	func textFieldDidChange(_ textField: UITextField) {
+	@objc func textFieldDidChange(_ textField: UITextField) {
 		let name = UserDefaults.standard.string(forKey: "name")
 		
 		if name != self.textField.text! {

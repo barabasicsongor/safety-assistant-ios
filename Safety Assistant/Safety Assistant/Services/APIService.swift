@@ -8,8 +8,26 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 struct APIService {
+	
+	func getARMap(completion: @escaping ((_ response: [Dictionary<String, Any>]?) -> Void)) {
+		let headers = ["Content-Type": "application/json"]
+		let url = "http://safetyassistant.us-east-1.elasticbeanstalk.com/armap"
+		
+		Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+			switch response.result {
+			case .success:
+				let js = JSON(response.result.value!)
+				let js_arr = js["items"].arrayObject as! [Dictionary<String, Any>]
+				completion(js_arr)
+			case .failure(let error):
+				print("Error \(error)")
+				completion(nil)
+			}
+		}
+	}
 	
 	func getDangerLevel(place: String, completion: @escaping ((_ response: String) -> Void)) {
 		let weekday = Date().weekDay()!
