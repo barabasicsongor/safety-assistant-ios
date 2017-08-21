@@ -27,17 +27,17 @@ class MapViewController: UIViewController {
 	var nhoods: [Neighbourhood] = []
 	var polygons: [MKPolygon] = []
 	var sanFrancisco = CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351)
-	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.15, 0.15))
+//	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.15, 0.15))
+	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.06, 0.06))
 	
 	let locationManager = CLLocationManager()
 	var selectedPin: MKPlacemark? = nil
-	var isCustomPin = true
 	
 	var resultSearchController: UISearchController? = nil
 	var searchBar: UISearchBar!
 	
 	var isSearchFieldHidden = true
-	var polygonCounter = 0
+	var mostDangerousHoodInd = -1
 	
 	
     override func viewDidLoad() {
@@ -71,6 +71,7 @@ class MapViewController: UIViewController {
 				self?.nhoods = result
 				self?.addPolygons()
 			})
+			
 		}
 		
     }
@@ -145,26 +146,6 @@ class MapViewController: UIViewController {
 	@objc func mapViewTapGestureRecognizerTap(_ gesture: UITapGestureRecognizer) {
 		if isSearchFieldHidden == false {
 			changeSearchFieldState()
-		} else {
-			let point = gesture.location(in: self.mapView)
-			let coordinate = self.mapView.convert(point, toCoordinateFrom: nil)
-			let mappoint = MKMapPointForCoordinate(coordinate)
-			let ind = pointInPolygonIndex(point: mappoint)
-			
-			if ind >= 0 {
-				mapView.removeAnnotations(mapView.annotations)
-				isCustomPin = false
-				
-				let annotation = MKPointAnnotation()
-				annotation.coordinate = polygons[ind].coordinate
-			
-				annotation.title = "Total number of crimes in \(nhoods[ind].name): \(nhoods[ind].totalCrimes)"
-				
-				mapView.addAnnotation(annotation)
-				let span = MKCoordinateSpanMake(0.05, 0.05)
-				let region = MKCoordinateRegionMake(polygons[ind].coordinate, span)
-				mapView.setRegion(region, animated: true)
-			}
 		}
 	}
 	
@@ -179,13 +160,24 @@ class MapViewController: UIViewController {
 	}
 	
 	func addPolygons() {
+		var mx = -1
+		var i = -1
 		
 		for hood in nhoods {
+			i += 1
+			
+			if hood.totalCrimes > mx {
+				mx = hood.totalCrimes
+				mostDangerousHoodInd = i
+			}
 			
 			var points: [CLLocationCoordinate2D] = []
+			var counter = 0
 			
 			for i in stride(from: 0, to: hood.polygon.count-1, by: 2) {
+				counter += 1
 				points.append(CLLocationCoordinate2DMake(hood.polygon[i], hood.polygon[i+1]))
+				
 			}
 			
 			let poly = MKPolygon(coordinates: &points, count: points.count)
@@ -195,6 +187,7 @@ class MapViewController: UIViewController {
 		}
 		
 		self.mapView.addOverlays(polygons)
+		KRProgressHUD.dismiss()
 	}
 	
 	func isPointInPolygons(point: MKMapPoint) -> Bool {
@@ -321,16 +314,16 @@ extension MapViewController: MKMapViewDelegate {
 				}
 			}
 			
-			renderer.fillColor = UIColor(hex: nhoods[ind].color).withAlphaComponent(0.6)
+			if ind == mostDangerousHoodInd {
+				renderer.fillColor = UIColor(hex: nhoods[ind].color).withAlphaComponent(0.8)
+			} else {
+				renderer.fillColor = UIColor(hex: nhoods[ind].color).withAlphaComponent(0.6)
+			}
+			
 			renderer.strokeColor = UIColor(hex: nhoods[ind].color).withAlphaComponent(0.1)
 			renderer.lineWidth = 8.0
 			renderer.lineJoin = .round
 			renderer.lineCap = .round
-			
-			polygonCounter += 1
-			if polygonCounter == polygons.count {
-				KRProgressHUD.dismiss()
-			}
 			
 			return renderer
 		}
@@ -350,13 +343,11 @@ extension MapViewController: MKMapViewDelegate {
 		pinView?.canShowCallout = true
 		
 		
-		if isCustomPin {
-			let smallSquare = CGSize(width: 30, height: 30)
-			let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-			button.setBackgroundImage(UIImage(named: "robot_avatar"), for: .normal)
-			button.addTarget(self, action: #selector(MapViewController.getDangerLevel), for: .touchUpInside)
-			pinView?.leftCalloutAccessoryView = button
-		}
+		let smallSquare = CGSize(width: 30, height: 30)
+		let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+		button.setBackgroundImage(UIImage(named: "robot_avatar"), for: .normal)
+		button.addTarget(self, action: #selector(MapViewController.getDangerLevel), for: .touchUpInside)
+		pinView?.leftCalloutAccessoryView = button
 		
 		return pinView
 	}
@@ -381,7 +372,6 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: HandleMapSearch {
 	func dropPinZoom(placemark: MKPlacemark) {
 		self.selectedPin = placemark
-		isCustomPin = true
 		mapView.removeAnnotations(mapView.annotations)
 		
 		let annotation = MKPointAnnotation()
