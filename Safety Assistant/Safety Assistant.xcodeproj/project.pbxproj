@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04CFB6B3A3F89C2F3ADFC8B1 /* Pods_Safety_AssistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F674FDB97E9A26EB1C5BF8E9 /* Pods_Safety_AssistantUITests.framework */; };
+		4F7B0D1CF528771792D6AA51 /* Pods_Safety_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2127B5CC92F4B6659CB8D239 /* Pods_Safety_Assistant.framework */; };
 		57024A701F3B457100093901 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57024A6F1F3B457100093901 /* HelpViewController.swift */; };
 		570B1CE41F2F33C800D74752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1CE31F2F33C800D74752 /* AppDelegate.swift */; };
 		570B1CEB1F2F33C800D74752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570B1CEA1F2F33C800D74752 /* Assets.xcassets */; };
 		570B1CEE1F2F33C800D74752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570B1CEC1F2F33C800D74752 /* LaunchScreen.storyboard */; };
-		570B1CF91F2F33C800D74752 /* Safety_AssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1CF81F2F33C800D74752 /* Safety_AssistantTests.swift */; };
-		570B1D041F2F33C800D74752 /* Safety_AssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D031F2F33C800D74752 /* Safety_AssistantUITests.swift */; };
 		570B1D181F2F348400D74752 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D171F2F348400D74752 /* MapViewController.swift */; };
 		570B1D1B1F2F34E700D74752 /* Neighbourhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D1A1F2F34E700D74752 /* Neighbourhood.swift */; };
 		570B1D1E1F2F390500D74752 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B1D1D1F2F390500D74752 /* MapService.swift */; };
@@ -46,26 +44,7 @@
 		57C4222E1F4436E60081A2A5 /* ARMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4222B1F4436E50081A2A5 /* ARMapViewController.swift */; };
 		57F873AF1F42FBE600CFD013 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F873AE1F42FBE600CFD013 /* art.scnassets */; };
 		57F873B81F4330B700CFD013 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F873B71F4330B700CFD013 /* LocationService.swift */; };
-		7891010F3E7B8D66F47FE3B1 /* Pods_Safety_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */; };
-		D285BA530F6B9F3092067084 /* Pods_Safety_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		570B1CF51F2F33C800D74752 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 570B1CD81F2F33C800D74752 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 570B1CDF1F2F33C800D74752;
-			remoteInfo = "Safety Assistant";
-		};
-		570B1D001F2F33C800D74752 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 570B1CD81F2F33C800D74752 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 570B1CDF1F2F33C800D74752;
-			remoteInfo = "Safety Assistant";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5752C1DA1F30AC3800D07BA3 /* Embed Frameworks */ = {
@@ -84,22 +63,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safety_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F50C4254DA9CF667DA13F6D /* Pods-Safety Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.debug.xcconfig"; sourceTree = "<group>"; };
-		20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safety_AssistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		353A21AF38B745E0948C7F75 /* Pods-Safety AssistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.release.xcconfig"; sourceTree = "<group>"; };
+		2127B5CC92F4B6659CB8D239 /* Pods_Safety_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safety_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		254A252D1EC51A7D6A6CBFD3 /* Pods_Safety_AssistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safety_AssistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E63AB11AE394E3B51A4AF7 /* Pods-Safety Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.release.xcconfig"; sourceTree = "<group>"; };
 		57024A6F1F3B457100093901 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = Main/Chat/HelpViewController.swift; sourceTree = "<group>"; };
 		570B1CE01F2F33C800D74752 /* Safety Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Safety Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		570B1CE31F2F33C800D74752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570B1CEA1F2F33C800D74752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		570B1CED1F2F33C800D74752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		570B1CEF1F2F33C800D74752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		570B1CF41F2F33C800D74752 /* Safety AssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safety AssistantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		570B1CF81F2F33C800D74752 /* Safety_AssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safety_AssistantTests.swift; sourceTree = "<group>"; };
-		570B1CFA1F2F33C800D74752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		570B1CFF1F2F33C800D74752 /* Safety AssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safety AssistantUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		570B1D031F2F33C800D74752 /* Safety_AssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safety_AssistantUITests.swift; sourceTree = "<group>"; };
-		570B1D051F2F33C800D74752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570B1D171F2F348400D74752 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Main/Map/MapViewController.swift; sourceTree = "<group>"; };
 		570B1D1A1F2F34E700D74752 /* Neighbourhood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Neighbourhood.swift; path = Models/Neighbourhood.swift; sourceTree = "<group>"; };
 		570B1D1D1F2F390500D74752 /* MapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapService.swift; path = Services/MapService.swift; sourceTree = "<group>"; };
@@ -133,11 +105,8 @@
 		57C4222B1F4436E50081A2A5 /* ARMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARMapViewController.swift; sourceTree = "<group>"; };
 		57F873AE1F42FBE600CFD013 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		57F873B71F4330B700CFD013 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = Common/LocationService.swift; sourceTree = "<group>"; };
-		8399C2D2F17E033BEA29C89F /* Pods-Safety AssistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A91272CEAD221AC83A3A6D8C /* Pods-Safety Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.release.xcconfig"; sourceTree = "<group>"; };
-		BA2EEE074E9861B2902E7E55 /* Pods-Safety AssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F17B0E13920549D0BBE9A33F /* Pods-Safety AssistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety AssistantUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F674FDB97E9A26EB1C5BF8E9 /* Pods_Safety_AssistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safety_AssistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B146758CDB1C194D67BC4181 /* Pods_Safety_AssistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safety_AssistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1A058C168045FBB266E68AF /* Pods-Safety Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safety Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,24 +118,8 @@
 				5752C1D61F30AC3800D07BA3 /* AWSLex.framework in Frameworks */,
 				5752C1D41F30AC3800D07BA3 /* AWSCore.framework in Frameworks */,
 				570B1D231F2F44E200D74752 /* MapKit.framework in Frameworks */,
-				D285BA530F6B9F3092067084 /* Pods_Safety_Assistant.framework in Frameworks */,
 				5752C1C31F30ABAE00D07BA3 /* AWSMobileHubHelper.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		570B1CF11F2F33C800D74752 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7891010F3E7B8D66F47FE3B1 /* Pods_Safety_AssistantTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		570B1CFC1F2F33C800D74752 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04CFB6B3A3F89C2F3ADFC8B1 /* Pods_Safety_AssistantUITests.framework in Frameworks */,
+				4F7B0D1CF528771792D6AA51 /* Pods_Safety_Assistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,24 +134,11 @@
 				5752C1921F30994800D07BA3 /* AWSLex.framework */,
 				5752C1901F30994600D07BA3 /* AWSCore.framework */,
 				570B1D221F2F44E200D74752 /* MapKit.framework */,
-				00A9D8B151AD4FB9FCE172F0 /* Pods_Safety_Assistant.framework */,
-				20D7633E67603570570DB2A1 /* Pods_Safety_AssistantTests.framework */,
-				F674FDB97E9A26EB1C5BF8E9 /* Pods_Safety_AssistantUITests.framework */,
+				2127B5CC92F4B6659CB8D239 /* Pods_Safety_Assistant.framework */,
+				B146758CDB1C194D67BC4181 /* Pods_Safety_AssistantTests.framework */,
+				254A252D1EC51A7D6A6CBFD3 /* Pods_Safety_AssistantUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		364BFFAE13E5C2D4973A7283 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1F50C4254DA9CF667DA13F6D /* Pods-Safety Assistant.debug.xcconfig */,
-				A91272CEAD221AC83A3A6D8C /* Pods-Safety Assistant.release.xcconfig */,
-				BA2EEE074E9861B2902E7E55 /* Pods-Safety AssistantTests.debug.xcconfig */,
-				353A21AF38B745E0948C7F75 /* Pods-Safety AssistantTests.release.xcconfig */,
-				F17B0E13920549D0BBE9A33F /* Pods-Safety AssistantUITests.debug.xcconfig */,
-				8399C2D2F17E033BEA29C89F /* Pods-Safety AssistantUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		570B1CD71F2F33C800D74752 = {
@@ -207,11 +147,9 @@
 				5752C1C41F30ABF400D07BA3 /* Sdk */,
 				5752C1BD1F30ABAE00D07BA3 /* AmazonAws */,
 				570B1CE21F2F33C800D74752 /* Safety Assistant */,
-				570B1CF71F2F33C800D74752 /* Safety AssistantTests */,
-				570B1D021F2F33C800D74752 /* Safety AssistantUITests */,
 				570B1CE11F2F33C800D74752 /* Products */,
-				364BFFAE13E5C2D4973A7283 /* Pods */,
 				03F33FDCE82EDBE0C523EDDD /* Frameworks */,
+				5C5F1E169DEF44F446DF259A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,8 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				570B1CE01F2F33C800D74752 /* Safety Assistant.app */,
-				570B1CF41F2F33C800D74752 /* Safety AssistantTests.xctest */,
-				570B1CFF1F2F33C800D74752 /* Safety AssistantUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,24 +176,6 @@
 				57F873AE1F42FBE600CFD013 /* art.scnassets */,
 			);
 			path = "Safety Assistant";
-			sourceTree = "<group>";
-		};
-		570B1CF71F2F33C800D74752 /* Safety AssistantTests */ = {
-			isa = PBXGroup;
-			children = (
-				570B1CF81F2F33C800D74752 /* Safety_AssistantTests.swift */,
-				570B1CFA1F2F33C800D74752 /* Info.plist */,
-			);
-			path = "Safety AssistantTests";
-			sourceTree = "<group>";
-		};
-		570B1D021F2F33C800D74752 /* Safety AssistantUITests */ = {
-			isa = PBXGroup;
-			children = (
-				570B1D031F2F33C800D74752 /* Safety_AssistantUITests.swift */,
-				570B1D051F2F33C800D74752 /* Info.plist */,
-			);
-			path = "Safety AssistantUITests";
 			sourceTree = "<group>";
 		};
 		570B1D111F2F343A00D74752 /* Main */ = {
@@ -420,6 +338,15 @@
 			path = Main/ARMap;
 			sourceTree = "<group>";
 		};
+		5C5F1E169DEF44F446DF259A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1A058C168045FBB266E68AF /* Pods-Safety Assistant.debug.xcconfig */,
+				49E63AB11AE394E3B51A4AF7 /* Pods-Safety Assistant.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -427,13 +354,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 570B1D081F2F33C800D74752 /* Build configuration list for PBXNativeTarget "Safety Assistant" */;
 			buildPhases = (
-				738E9BFA93E4FE972F5C929D /* [CP] Check Pods Manifest.lock */,
+				AB87739E98BCA33CD5C0837B /* [CP] Check Pods Manifest.lock */,
 				570B1CDC1F2F33C800D74752 /* Sources */,
 				570B1CDD1F2F33C800D74752 /* Frameworks */,
 				570B1CDE1F2F33C800D74752 /* Resources */,
-				087C16115FCA0C5880260145 /* [CP] Embed Pods Frameworks */,
-				71720834E2F586305DD8C621 /* [CP] Copy Pods Resources */,
 				5752C1DA1F30AC3800D07BA3 /* Embed Frameworks */,
+				D6C0E430A1997D74FB8B5138 /* [CP] Embed Pods Frameworks */,
+				2F72297734B6BDB1FCA6B9A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -443,48 +370,6 @@
 			productName = "Safety Assistant";
 			productReference = 570B1CE01F2F33C800D74752 /* Safety Assistant.app */;
 			productType = "com.apple.product-type.application";
-		};
-		570B1CF31F2F33C800D74752 /* Safety AssistantTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 570B1D0B1F2F33C800D74752 /* Build configuration list for PBXNativeTarget "Safety AssistantTests" */;
-			buildPhases = (
-				410B0A6F035E7F2961D1EAF9 /* [CP] Check Pods Manifest.lock */,
-				570B1CF01F2F33C800D74752 /* Sources */,
-				570B1CF11F2F33C800D74752 /* Frameworks */,
-				570B1CF21F2F33C800D74752 /* Resources */,
-				2143441559070DC361168B1A /* [CP] Embed Pods Frameworks */,
-				6B4A64942BA2326AF7A19B5D /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				570B1CF61F2F33C800D74752 /* PBXTargetDependency */,
-			);
-			name = "Safety AssistantTests";
-			productName = "Safety AssistantTests";
-			productReference = 570B1CF41F2F33C800D74752 /* Safety AssistantTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		570B1CFE1F2F33C800D74752 /* Safety AssistantUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 570B1D0E1F2F33C800D74752 /* Build configuration list for PBXNativeTarget "Safety AssistantUITests" */;
-			buildPhases = (
-				06F340F645064217C540017C /* [CP] Check Pods Manifest.lock */,
-				570B1CFB1F2F33C800D74752 /* Sources */,
-				570B1CFC1F2F33C800D74752 /* Frameworks */,
-				570B1CFD1F2F33C800D74752 /* Resources */,
-				84FE046AF408C8DC4030416F /* [CP] Embed Pods Frameworks */,
-				E7BA5785A0252ED14094AF90 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				570B1D011F2F33C800D74752 /* PBXTargetDependency */,
-			);
-			name = "Safety AssistantUITests";
-			productName = "Safety AssistantUITests";
-			productReference = 570B1CFF1F2F33C800D74752 /* Safety AssistantUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -502,20 +387,6 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
-					570B1CF31F2F33C800D74752 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ZUWW9J8PQJ;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 570B1CDF1F2F33C800D74752;
-					};
-					570B1CFE1F2F33C800D74752 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ZUWW9J8PQJ;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 570B1CDF1F2F33C800D74752;
-					};
 				};
 			};
 			buildConfigurationList = 570B1CDB1F2F33C800D74752 /* Build configuration list for PBXProject "Safety Assistant" */;
@@ -532,8 +403,6 @@
 			projectRoot = "";
 			targets = (
 				570B1CDF1F2F33C800D74752 /* Safety Assistant */,
-				570B1CF31F2F33C800D74752 /* Safety AssistantTests */,
-				570B1CFE1F2F33C800D74752 /* Safety AssistantUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -554,99 +423,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		570B1CF21F2F33C800D74752 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		570B1CFD1F2F33C800D74752 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06F340F645064217C540017C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		087C16115FCA0C5880260145 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2143441559070DC361168B1A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		410B0A6F035E7F2961D1EAF9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6B4A64942BA2326AF7A19B5D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safety AssistantTests/Pods-Safety AssistantTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71720834E2F586305DD8C621 /* [CP] Copy Pods Resources */ = {
+		2F72297734B6BDB1FCA6B9A2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -661,7 +441,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		738E9BFA93E4FE972F5C929D /* [CP] Check Pods Manifest.lock */ = {
+		AB87739E98BCA33CD5C0837B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -676,7 +456,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		84FE046AF408C8DC4030416F /* [CP] Embed Pods Frameworks */ = {
+		D6C0E430A1997D74FB8B5138 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -688,22 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7BA5785A0252ED14094AF90 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safety AssistantUITests/Pods-Safety AssistantUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safety Assistant/Pods-Safety Assistant-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -736,36 +501,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		570B1CF01F2F33C800D74752 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				570B1CF91F2F33C800D74752 /* Safety_AssistantTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		570B1CFB1F2F33C800D74752 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				570B1D041F2F33C800D74752 /* Safety_AssistantUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		570B1CF61F2F33C800D74752 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 570B1CDF1F2F33C800D74752 /* Safety Assistant */;
-			targetProxy = 570B1CF51F2F33C800D74752 /* PBXContainerItemProxy */;
-		};
-		570B1D011F2F33C800D74752 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 570B1CDF1F2F33C800D74752 /* Safety Assistant */;
-			targetProxy = 570B1D001F2F33C800D74752 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		570B1CEC1F2F33C800D74752 /* LaunchScreen.storyboard */ = {
@@ -886,10 +622,11 @@
 		};
 		570B1D091F2F33C800D74752 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F50C4254DA9CF667DA13F6D /* Pods-Safety Assistant.debug.xcconfig */;
+			baseConfigurationReference = F1A058C168045FBB266E68AF /* Pods-Safety Assistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AmazonAws",
@@ -907,10 +644,11 @@
 		};
 		570B1D0A1F2F33C800D74752 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A91272CEAD221AC83A3A6D8C /* Pods-Safety Assistant.release.xcconfig */;
+			baseConfigurationReference = 49E63AB11AE394E3B51A4AF7 /* Pods-Safety Assistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AmazonAws",
@@ -923,72 +661,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		570B1D0C1F2F33C800D74752 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA2EEE074E9861B2902E7E55 /* Pods-Safety AssistantTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
-				INFOPLIST_FILE = "Safety AssistantTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Safety Assistant.app/Safety Assistant";
-			};
-			name = Debug;
-		};
-		570B1D0D1F2F33C800D74752 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 353A21AF38B745E0948C7F75 /* Pods-Safety AssistantTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
-				INFOPLIST_FILE = "Safety AssistantTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Safety Assistant.app/Safety Assistant";
-			};
-			name = Release;
-		};
-		570B1D0F1F2F33C800D74752 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F17B0E13920549D0BBE9A33F /* Pods-Safety AssistantUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
-				INFOPLIST_FILE = "Safety AssistantUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = "Safety Assistant";
-			};
-			name = Debug;
-		};
-		570B1D101F2F33C800D74752 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8399C2D2F17E033BEA29C89F /* Pods-Safety AssistantUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = ZUWW9J8PQJ;
-				INFOPLIST_FILE = "Safety AssistantUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Csongor-Barabasi.Safety-AssistantUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = "Safety Assistant";
 			};
 			name = Release;
 		};
@@ -1009,24 +681,6 @@
 			buildConfigurations = (
 				570B1D091F2F33C800D74752 /* Debug */,
 				570B1D0A1F2F33C800D74752 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		570B1D0B1F2F33C800D74752 /* Build configuration list for PBXNativeTarget "Safety AssistantTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				570B1D0C1F2F33C800D74752 /* Debug */,
-				570B1D0D1F2F33C800D74752 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		570B1D0E1F2F33C800D74752 /* Build configuration list for PBXNativeTarget "Safety AssistantUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				570B1D0F1F2F33C800D74752 /* Debug */,
-				570B1D101F2F33C800D74752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

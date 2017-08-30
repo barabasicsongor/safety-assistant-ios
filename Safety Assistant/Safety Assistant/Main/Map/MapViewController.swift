@@ -19,7 +19,6 @@ class MapViewController: UIViewController {
 	
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var searchButton: UIButton!
-	@IBOutlet weak var zoomButton: UIButton!
 	
 	var rightBarButton: UIBarButtonItem!
 	var leftBarButton: UIBarButtonItem!
@@ -27,7 +26,6 @@ class MapViewController: UIViewController {
 	var nhoods: [Neighbourhood] = []
 	var polygons: [MKPolygon] = []
 	var sanFrancisco = CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351)
-//	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.15, 0.15))
 	var sanFranciscoRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.760545, longitude: -122.443351), span: MKCoordinateSpanMake(0.06, 0.06))
 	
 	let locationManager = CLLocationManager()
@@ -43,8 +41,6 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		LocationService.sharedInstance.startUpdatingLocation()
-		
-		self.zoomButton.isHidden = true
 		
 		setupNavBar()
 		loadMap()
@@ -66,12 +62,10 @@ class MapViewController: UIViewController {
 		KRProgressHUD.show()
 		
 		DispatchQueue.global().async {
-			
 			MapService(url: "http://safetyassistant.us-east-1.elasticbeanstalk.com/heatmap").makeRequest(completion: { [weak self] result in
 				self?.nhoods = result
 				self?.addPolygons()
 			})
-			
 		}
 		
     }
@@ -227,16 +221,24 @@ class MapViewController: UIViewController {
 			self.navigationItem.rightBarButtonItem = nil
 			self.navigationItem.leftBarButtonItem = nil
 			self.searchButton.isHidden = true
-//			self.zoomButton.isHidden = true
+			
 			self.navigationItem.titleView = self.searchBar
+			
+//			self.navigationController?.navigationBar.prefersLargeTitles = true
+//			self.navigationItem.searchController = resultSearchController
+			
+			
 			self.searchBar.becomeFirstResponder()
 		} else {
 			isSearchFieldHidden = true
 			self.navigationItem.rightBarButtonItem = self.rightBarButton
 			self.navigationItem.leftBarButtonItem = self.leftBarButton
 			self.searchButton.isHidden = false
-//			self.zoomButton.isHidden = false
+			
+			
 			self.navigationItem.titleView = nil
+//			self.navigationController?.navigationBar.prefersLargeTitles = false
+//			self.navigationItem.searchController = nil
 		}
 	}
 	

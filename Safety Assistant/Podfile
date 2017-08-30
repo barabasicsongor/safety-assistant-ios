@@ -10,16 +10,4 @@ target 'Safety Assistant' do
   pod 'KRProgressHUD'
   pod 'SimpleAnimation'
 
-  # Pods for Safety Assistant
-
-  target 'Safety AssistantTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Safety AssistantUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

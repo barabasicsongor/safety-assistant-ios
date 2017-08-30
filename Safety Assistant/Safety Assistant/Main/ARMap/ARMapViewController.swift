@@ -54,99 +54,12 @@ class ARMapViewController: UIViewController {
         // Run the view's session
         sceneView.session.run(configuration)
 		
-//		APIService().getARMap { json in
-//			if let js = json {
-//				self.data = js
-//				print(self.data[0])
-//			}
-//
-//			LocationService.sharedInstance.startUpdatingHeading()
-//		}
-		
-		
-		data = [
-			["title": "15",
-			 "color": "#89e21b",
-			 "lat": 53.480859,
-			 "lng": -2.244853
-			],
-			["title": "37",
-			 "color": "#f7ef54",
-			 "lat": 53.480781,
-			 "lng": -2.244878
-			],
-			["title": "52",
-			 "color": "#f7ef54",
-			 "lat": 53.480854,
-			 "lng": -2.244937
-			],
-			["title": "113",
-			 "color": "#E53935",
-			 "lat": 53.480676,
-			 "lng": -2.244987
-			],
-			["title": "251",
-			 "color": "#E53935",
-			 "lat": 53.480796,
-			 "lng": -2.245080
-			],
-			["title": "330",
-			 "color": "#E53935",
-			 "lat": 53.480587,
-			 "lng": -2.245619
-			],
-			["title": "36",
-			 "color": "#89e21b",
-			 "lat": 53.480579,
-			 "lng": -2.245528
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.480594,
-			 "lng": -2.245598
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.48056854,
-			 "lng": -2.24552233
-			],
-			["title": "77",
-			"color": "#f7ef54",
-			"lat": 53.48055093,
-			"lng": -2.24544772
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.480566,
-			 "lng": -2.245883
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.480629,
-			 "lng": -2.245950
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.480548,
-			 "lng": -2.245939
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.480563,
-			 "lng": -2.245798
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.480603,
-			 "lng": -2.245959
-			],
-			["title": "77",
-			 "color": "#f7ef54",
-			 "lat": 53.480548,
-			 "lng": -2.245760
-			]
-		]
-		LocationService.sharedInstance.startUpdatingHeading()
+		APIService().getARMap { json in
+			if let js = json {
+				self.data = js
+			}
+			LocationService.sharedInstance.startUpdatingHeading()
+		}
 		
     }
     
